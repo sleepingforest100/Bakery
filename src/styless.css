@@ -1,0 +1,213 @@
+
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #ffeeba;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+}
+/* Style the carousel images */
+.carousel-inner img {
+    object-fit: contain; /* This will make the images fit within the carousel item without distortion */
+    max-width: 100%; /* Set the maximum width for the images */
+    max-height: 100%; /* Set the maximum height for the images */
+    margin: 0 auto; /* Center the images horizontally */
+}
+
+/* Style the images on the index.html page */
+img {
+    max-width: 100%; /* Set the maximum width to 100% */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+}
+
+.btn-primary {
+    background-color: #ff6b6b; /* Red button color */
+    border-color: #ff6b6b;
+    color: #fff; /* White text color */
+}
+
+.btn-secondary {
+    background-color: #ffa07a; /* Light salmon button color */
+    border-color: #ffa07a;
+    color: #fff;
+}
+
+/* Container Styles */
+.container {
+    background-color: #fff; /* White container background */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle lift effect */
+}
+
+/* Carousel Styles */
+.carousel {
+    margin-top: 20px;
+}
+
+.carousel-item img {
+    max-height: 300px; /* Adjust the maximum image height as needed */
+}
+
+/* Alert Styles */
+.alert {
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.alert-success {
+    background-color: #d4edda; /* Green success alert background */
+    border-color: #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da; /* Red danger alert background */
+    border-color: #f5c6cb;
+}
+
+/* Typography Styles */
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+/* Centered Text */
+.text-center {
+    text-align: center;
+}
+
+
+.carousel-item img {
+    max-height: 500px;
+    object-fit: contain;
+    color: #f5c6cb;
+}
+/* Add custom styles here */
+
+/* Center the page content */
+.container {
+    text-align: center;
+}
+
+/* Add margin to the top of headings */
+h1, h2 {
+    margin-top: 20px;
+}
+
+/* Style the dropdown button */
+.dropdown-toggle {
+    background-color: #ffc107;
+    border: none;
+}
+
+/* Style the product cards */
+.card {
+    border: none;
+}
+
+/* Style the product images */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Style the "Order Now" buttons */
+.btn-primary {
+    background-color: #ff5722;
+    border: none;
+}
+
+/* Style the Product List Group */
+.list-group {
+    margin-top: 20px;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+    border: none;
+    font-weight: bold;
+}
+
+.list-group-item:hover {
+    background-color: #e2e3e5;
+}
+
+/* Add custom styles for the About Us page here */
+
+/* Center the page content */
+.container {
+    text-align: center;
+}
+
+/* Style the page headings */
+h1, h2 {
+    margin-top: 20px;
+}
+
+/* Style the team members list */
+.list-group {
+    margin-top: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list-group-item {
+    background-color: #f8f9fa;
+    border: none;
+    font-weight: bold;
+}
+
+/* Style the carousel images */
+.carousel-inner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Style the contact form */
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+/* Style the submit button */
+.btn-primary {
+    background-color: #ff5722;
+    border: none;
+}
+/* Styling for the login form */
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
