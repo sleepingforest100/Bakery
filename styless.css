@@ -210,3 +210,127 @@ h1, h2 {
 .btn-primary:hover {
     background-color: #0056b3;
 }
+
+/* Add this CSS to your existing CSS file or in a <style> tag within the HTML file */
+#cart-container {
+    position: relative;
+    float: right;
+    margin: 10px;
+}
+
+#cart-icon {
+    cursor: pointer;
+}
+
+#cart-info {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    max-width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}
+
+#countdown-container {
+    text-align: center;
+    padding: 20px;
+}
+
+#countdown-display {
+    font-size: 36px;
+    font-weight: bold;
+    color: #FF5733;
+    animation: pulse 1s infinite;
+}
+
+#controls {
+    margin-top: 10px;
+}
+
+#minutes-input {
+    width: 50px;
+    text-align: center;
+}
+
+#start-button {
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover {
+    background-color: #FF2400;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Tab Container Styles */
+.tab-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: burlywood;
+}
+
+/* Tab Button Styles */
+.tab-button {
+    padding: 10px 20px;
+    background-color: bisque;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button.active {
+    background-color: burlywood;
+}
+
+/* Tab Content Styles */
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Accordion Button Styles */
+.accordion-button {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+/* Accordion Active Button Styles */
+.accordion-button:not(.collapsed) {
+    background-color: white;
+}
+
+/* Accordion Content Styles */
+.accordion-body {
+    background-color: bisque;
+    padding: 10px;
+}
+

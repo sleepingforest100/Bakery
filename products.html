@@ -40,8 +40,21 @@
         <li class="nav-item active">
           <a class="nav-link" href="contact.html">Contact</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="Cart.html">Cart</a>
+        </li>
 
-
+        <div id="cart-container">
+          <img id="cart-icon" rel="icon" src="images/cart.png" alt="Cart Icon" width="32" height="32">
+          <div id="cart-info" class="hidden">
+            <!-- Your cart information content goes here -->
+            <h2>Your Shopping Cart</h2>
+            <ul id="cart-items">
+              <!-- Cart items will be added here -->
+            </ul>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+          </div>
+        </div>
       </ul>
     </div>
   </div>
@@ -72,9 +85,10 @@
       <div class="card mb-3">
         <img src="images/baguette.jpg" class="card-img-top" alt="Baguette">
         <div class="card-body">
-          <h5 class="card-title">French baguette</h5>
+          <h5 class="card-title">French Baguette</h5>
           <p class="card-text">A long, thin type of bread of French origin</p>
-          <a href="#" class="btn btn-primary">Order Now</a>
+          <p>Price: $10.99</p>
+          <button class="add-to-cart" data-name="French Baguette" data-price="14.99">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -84,9 +98,10 @@
       <div class="card mb-3">
         <img src="images/fruit danish.jpg" class="card-img-top" alt="Fruit Danish">
         <div class="card-body">
-          <h5 class="card-title">Fruit danish</h5>
-          <p class="card-text"> Laminated, rich golden brown Danish pastry filled with pastry cream, apples, raspberries, cherries, almonds and blueberries.</p>
-          <a href="#" class="btn btn-primary">Order Now</a>
+          <h5 class="card-title">Fruit Danish</h5>
+          <p class="card-text">Laminated, rich golden brown Danish pastry filled with pastry cream, apples, raspberries, cherries, almonds, and blueberries.</p>
+          <p>Price: $1.99</p>
+          <button class="add-to-cart" data-name="Fruit Danish" data-price="19.99">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -94,28 +109,51 @@
     <!-- Product Card 3 -->
     <div class="col-md-3">
       <div class="card mb-3">
-        <img src="images/muffins.jpg" class="card-img-top" alt="muffins">
+        <img src="images/muffins.jpg" class="card-img-top" alt="Muffins">
         <div class="card-body">
-          <h5 class="card-title">Blueberry muffins</h5>
+          <h5 class="card-title">Blueberry Muffins</h5>
           <p class="card-text">Inspired taste.</p>
-          <a href="#" class="btn btn-primary">Order Now</a>
+          <p>Price: $1.99</p>
+          <button class="add-to-cart" data-name="Blueberry Muffins" data-price="12.99">Add to Cart</button>
         </div>
       </div>
     </div>
+
+    <!-- Product Card 4 -->
     <div class="col-md-3">
       <div class="card mb-3">
-        <img src="images/red%20velvet.jpg" class="card-img-top" alt="red velvet">
+        <img src="images/red%20velvet.jpg" class="card-img-top" alt="Red Velvet">
         <div class="card-body">
-          <h5 class="card-title">Red velvet cake</h5>
+          <h5 class="card-title">Red Velvet Cake</h5>
           <p class="card-text">This cake is much lighter than chocolate cake with a tangy note from the cream cheese frosting.</p>
-          <a href="#" class="btn btn-primary">Order Now</a>
+          <p>Price: $10.99</p>
+          <button class="add-to-cart" data-name="Red Velvet Cake" data-price="13.99">Add to Cart</button>
         </div>
       </div>
     </div>
+
+    <div id="feedback-container" class="hidden">
+      <div id="feedback-message"></div>
+    </div>
   </div>
-  <!-- Product Card 4 -->
+
+
+
+  <!-- Add this code to your "products.html" file -->
+  <div class="container my-5">
+    <h2>To-Do List</h2>
+    <div class="input-group mb-3">
+      <input type="text" id="task" class="form-control" placeholder="Add a new task" aria-label="Task" aria-describedby="add-button">
+      <button class="btn btn-primary" type="button" id="add-button">Add</button>
+    </div>
+    <ul id="task-list" class="list-group">
+      <!-- Tasks will be dynamically added here -->
+    </ul>
+  </div>
+
 
 </div>
+
 
   <!-- Product List Group -->
   <div class="list-group">
@@ -125,6 +163,126 @@
     <a href="#" class="list-group-item list-group-item-action">French Baguette</a>
   </div>
 </div>
+
+
+<!-- Add this script to your "products.html" file, at the end of the body section -->
+<script>
+  // Function to create a new task and add it to the list
+  function addTask() {
+    const taskInput = document.getElementById('task');
+    const taskText = taskInput.value.trim();
+
+    if (taskText) {
+      const taskList = document.getElementById('task-list');
+
+      // Create list item
+      const listItem = document.createElement('li');
+      listItem.className = 'list-group-item';
+      listItem.innerHTML = `
+                <span>${taskText}</span>
+                <button class="btn btn-danger btn-sm float-end delete-task">Delete</button>
+                <button class="btn btn-success btn-sm float-end complete-task">Complete</button>
+            `;
+
+      // Add event listeners for delete and complete buttons
+      listItem.querySelector('.delete-task').addEventListener('click', () => {
+        taskList.removeChild(listItem);
+      });
+
+      listItem.querySelector('.complete-task').addEventListener('click', () => {
+        listItem.classList.add('task-completed');
+      });
+
+      taskList.appendChild(listItem);
+      taskInput.value = '';
+    }
+  }
+
+  // Add task on button click
+  document.getElementById('add-button').addEventListener('click', addTask);
+
+  // Add task on Enter key press
+  document.getElementById('task').addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      addTask();
+    }
+  });
+//-----------------------------------------------------
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+  addToCartButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const name = button.dataset.name;
+      const price = parseFloat(button.dataset.price);
+      addToCart(name, price);
+    });
+  });
+
+  function addToCart(name, price) {
+    const cartItem = { name, price };
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(cartItem);
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+
+  //---------------------
+  // Add this JavaScript code at the end of your HTML body or in a separate JavaScript file
+  const cartIcon = document.getElementById('cart-icon');
+  const cartInfo = document.getElementById('cart-info');
+
+  cartIcon.addEventListener('click', () => {
+    cartInfo.classList.toggle('hidden');
+  });
+  //---------------
+  // Add this JavaScript code at the end of your HTML body or in a separate JavaScript file
+  const cartIcon = document.getElementById('cart-icon');
+  const cartInfo = document.getElementById('cart-info');
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  const cartItems = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const feedbackContainer = document.getElementById('feedback-container');
+  const feedbackMessage = document.getElementById('feedback-message');
+
+  const cart = {
+    items: [],
+    total: 0,
+  };
+
+  function updateCart() {
+    cartItems.innerHTML = '';
+    cart.items.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${item.name} - $${item.price}`;
+      cartItems.appendChild(listItem);
+    });
+    cartTotal.textContent = cart.total.toFixed(2);
+  }
+
+  function showFeedback(message, type) {
+    feedbackMessage.textContent = message;
+    feedbackContainer.className = `feedback ${type}`;
+    setTimeout(() => {
+      feedbackContainer.className = 'hidden';
+    }, 3000); // Hide feedback after 3 seconds
+  }
+
+  cartIcon.addEventListener('click', () => {
+    cartInfo.classList.toggle('hidden');
+  });
+
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const name = button.getAttribute('data-name');
+      const price = parseFloat(button.getAttribute('data-price'));
+      cart.items.push({ name, price });
+      cart.total += price;
+      updateCart();
+      showFeedback(`${name} added to the cart.`, 'success');
+    });
+  });
+
+</script>
 
 </body>
 </html>

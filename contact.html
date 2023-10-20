@@ -67,27 +67,87 @@
   </div>
 
   <!-- Contact Form -->
-  <div class="my-4">
-    <h2>Contact Form</h2>
-    <form>
+  <div class="container my-5">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
       <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Your Name">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+        <div id="name-error" class="error"></div>
       </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Your Email">
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Message</label>
-        <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div>
-</div>
 
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+        <div id="email-error" class="error"></div>
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Message:</label>
+        <textarea class="form-control" id="message" name="message" required></textarea>
+        <div id="message-error" class="error"></div>
+      </div>
+
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+    <div id="error-message" class="error"></div>
+  </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      // Prevent the default form submission
+      event.preventDefault();
+
+      // Reset previous error messages
+      clearErrors();
+
+      // Perform form validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const emailPattern = /^\S+@\S+\.\S+$/;
+
+      if (name.trim() === '') {
+        displayError('name-error', 'Name is required');
+      }
+      if (!emailPattern.test(email)) {
+        displayError('email-error', 'Enter a valid email address');
+      }
+      if (message.trim() === '') {
+        displayError('message-error', 'Message is required');
+      }
+
+      // Check if any errors were displayed
+      if (document.querySelectorAll('.error').length === 0) {
+        // If no errors, you can submit the form or take other actions
+        alert('Form submitted successfully');
+      } else {
+        // If errors exist, display a general error message
+        document.getElementById('error-message').textContent = 'Please fix the errors above';
+      }
+    });
+
+    // Function to display error messages
+    function displayError(elementId, errorMessage) {
+      const errorElement = document.getElementById(elementId);
+      errorElement.textContent = errorMessage;
+    }
+
+    // Function to clear error messages
+    function clearErrors() {
+      const errorElements = document.querySelectorAll('.error');
+      errorElements.forEach(function(errorElement) {
+        errorElement.textContent = '';
+      });
+    }
+  </script>
+
+
 </body>
 </html>

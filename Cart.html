@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css"> <!-- Your website's CSS file -->
+</head>
+<body>
+<h1>Your Shopping Cart</h1>
+<ul id="cart-items">
+    <!-- Cart items will be added here -->
+</ul>
+<p>Total: $<span id="cart-total">0.00</span></p>
+<a href="index.html" class="continue-shopping">Continue Shopping</a>
+
+<script>
+    const cartItemsList = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const continueShoppingLink = document.querySelector('.continue-shopping');
+
+    function updateCart() {
+        cartItemsList.innerHTML = '';
+        let total = 0;
+
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        cart.forEach((cartItem) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${cartItem.name} - $${cartItem.price.toFixed(2)}`;
+            cartItemsList.appendChild(listItem);
+            total += cartItem.price;
+        });
+
+        cartTotal.textContent = total.toFixed(2);
+    }
+
+    updateCart();
+
+    continueShoppingLink.addEventListener('click', () => {
+        localStorage.removeItem('cart');
+    });
+</script>
+</body>
+</html>
