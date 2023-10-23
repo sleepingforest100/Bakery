@@ -300,16 +300,20 @@
 
 
 <script>
-    // Add this JavaScript code at the end of your HTML body or in a separate JavaScript file
-    const minutesInput = document.getElementById('minutes-input');
-    const startButton = document.getElementById('start-button');
-    const minutesDisplay = document.getElementById('minutes');
-    const secondsDisplay = document.getElementById('seconds');
 
-    let countdownInterval;
-    let minutes = 0;
-    let seconds = 0;
 
+    // Get references to various HTML elements
+    const minutesInput = document.getElementById('minutes-input'); // Input for setting countdown minutes
+    const startButton = document.getElementById('start-button');   // Button to start the countdown
+    const minutesDisplay = document.getElementById('minutes');     // Display for minutes left
+    const secondsDisplay = document.getElementById('seconds');     // Display for seconds left
+
+    // Initialize variables for the countdown timer
+    let countdownInterval;  // Holds the interval ID for the countdown
+    let minutes = 0;        // The minutes remaining in the countdown
+    let seconds = 0;        // The seconds remaining in the countdown
+
+    // Function to start the countdown
     function startCountdown() {
         // Disable the input and start button while the timer is running
         minutesInput.disabled = true;
@@ -321,6 +325,7 @@
 
         updateDisplay();
 
+        // Set up an interval to update the countdown
         countdownInterval = setInterval(() => {
             if (minutes === 0 && seconds === 0) {
                 stopCountdown();
@@ -334,29 +339,35 @@
         }, 1000);
     }
 
+    // Function to stop the countdown
     function stopCountdown() {
         clearInterval(countdownInterval);
 
+        // Re-enable the input and start button
         minutesInput.disabled = false;
         startButton.disabled = false;
     }
 
+    // Function to update the display of minutes and seconds
     function updateDisplay() {
         minutesDisplay.textContent = padZero(minutes);
         secondsDisplay.textContent = padZero(seconds);
     }
 
+    // Function to pad single-digit numbers with a leading zero
     function padZero(value) {
         return value < 10 ? '0' + value : value;
     }
 
+    // Add a click event listener to the start button
     startButton.addEventListener('click', startCountdown);
 
+    // Handling tab functionality
+    const tabButtons = document.querySelectorAll('.tab-button');     // Get all tab buttons
+    const tabContents = document.querySelectorAll('.tab-content');    // Get all tab content elements
 
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabButtons.forEach(button => {
+    // Add click event listeners to the tab buttons
+    tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Deactivate all buttons and content
             tabButtons.forEach(btn => btn.classList.remove('active'));
@@ -369,9 +380,11 @@
         });
     });
 
+    // Initialize Bootstrap collapsible accordions
     var accordions = new bootstrap.Collapse(document.querySelectorAll('.accordion-collapse'), {
         toggle: false // Allow multiple accordion sections to be open at once
     });
+
 </script>
 
 

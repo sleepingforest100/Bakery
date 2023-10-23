@@ -144,7 +144,7 @@
 
 
 
-  <!-- Add this code to your "products.html" file -->
+
   <div class="container mt-5">
     <h2 class="mb-3">To-Do List</h2>
     <div class="input-group mb-3">
@@ -184,9 +184,10 @@
 </div>
 
 
-<!-- Add this script to your "products.html" file, at the end of the body section -->
+
 <script>
-  // Function to add a new task to the list
+
+  // Get references to HTML elements for task management
   document.addEventListener('DOMContentLoaded', function() {
     const taskInput = document.getElementById('taskInput');
     const dueDate = document.getElementById('dueDate');
@@ -195,42 +196,49 @@
     const taskList = document.getElementById('taskList');
     const filterSelect = document.getElementById('filter');
 
+    // Event listener to add a new task to the list
     addTaskBtn.addEventListener('click', function() {
+      // Retrieve values from input fields
       const taskText = taskInput.value.trim();
       const taskDueDate = dueDate.value;
       const taskPriority = priority.value;
 
+      // Create a new list item for the task
       if (taskText) {
         const taskItem = document.createElement('li');
         taskItem.className = 'list-group-item';
         taskItem.innerHTML = `
-                        <span>${taskText}</span>
-                        <div class="float-right">
-                            <button class="btn btn-success btn-sm mr-2" onclick="completeTask(this)">Complete</button>
-                            <button class="btn btn-danger btn-sm" onclick="deleteTask(this)">Delete</button>
-                        </div>
-                        <div class="task-details">
-                            <strong>Due Date:</strong> ${taskDueDate} | <strong>Priority:</strong> ${taskPriority}
-                        </div>
-                    `;
+                <span>${taskText}</span>
+                <div class="float-right">
+                    <button class="btn btn-success btn-sm mr-2" onclick="completeTask(this)">Complete</button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteTask(this)">Delete</button>
+                </div>
+                <div class="task-details">
+                    <strong>Due Date:</strong> ${taskDueDate} | <strong>Priority:</strong> ${taskPriority}
+                </div>
+            `;
         taskList.appendChild(taskItem);
         taskInput.value = '';
         dueDate.value = '';
       }
     });
 
+    // Event listener to filter tasks
     filterSelect.addEventListener('change', filterTasks);
 
+    // Function to mark a task as completed
     function completeTask(button) {
       const taskText = button.parentElement.parentElement.querySelector('span');
       taskText.classList.toggle('completed');
     }
 
+    // Function to delete a task
     function deleteTask(button) {
       const taskItem = button.parentElement.parentElement;
       taskList.removeChild(taskItem);
     }
 
+    // Function to filter tasks based on the selected filter
     function filterTasks() {
       const filterValue = filterSelect.value;
       const tasks = taskList.querySelectorAll('li');
@@ -257,10 +265,8 @@
       });
     }
   });
-  //-----------------------------------------------------
 
-
-  // Add this JavaScript code at the end of your HTML body or in a separate JavaScript file
+  // Code for a shopping cart feature
   const cartIcon = document.getElementById('cart-icon');
   const cartInfo = document.getElementById('cart-info');
   const addToCartButtons = document.querySelectorAll('.add-to-cart');
@@ -269,11 +275,13 @@
   const feedbackContainer = document.getElementById('feedback-container');
   const feedbackMessage = document.getElementById('feedback-message');
 
+  // Initialize a shopping cart object
   const cart = {
     items: [],
     total: 0,
   };
 
+  // Function to update the cart display
   function updateCart() {
     cartItems.innerHTML = '';
     cart.items.forEach(item => {
@@ -284,6 +292,7 @@
     cartTotal.textContent = cart.total.toFixed(2);
   }
 
+  // Function to show feedback messages
   function showFeedback(message, type) {
     feedbackMessage.textContent = message;
     feedbackContainer.className = `feedback ${type}`;
@@ -292,10 +301,12 @@
     }, 3000); // Hide feedback after 3 seconds
   }
 
+  // Toggle cart visibility on cart icon click
   cartIcon.addEventListener('click', () => {
     cartInfo.classList.toggle('hidden');
   });
 
+  // Event listeners for adding items to the cart
   addToCartButtons.forEach(button => {
     button.addEventListener('click', () => {
       const name = button.getAttribute('data-name');
@@ -306,6 +317,9 @@
       showFeedback(`${name} added to the cart.`, 'success');
     });
   });
+
+
+
 
 </script>
 

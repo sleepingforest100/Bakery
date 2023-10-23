@@ -333,4 +333,6 @@ h1, h2 {
     background-color: bisque;
     padding: 10px;
 }
-
+.hidden {
+    display: none;
+}
