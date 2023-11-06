@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Monitoring System</title>
+  <!-- Include Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    canvas {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Real-Time Monitoring System</h1>
+  <canvas id="line-chart" width="400" height="200"></canvas>
+  <canvas id="bar-chart" width="400" height="200"></canvas>
+</div>
+<script>// Simulated real-time data updates
+const lineData = {
+  labels: [],
+  datasets: [{
+    label: 'Website Traffic',
+    data: [],
+    borderColor: 'rgba(75, 192, 192, 1)',
+    borderWidth: 1,
+    fill: false,
+  }],
+};
+
+const barData = {
+  labels: ['Page Views', 'Visitors', 'Clicks', 'Downloads'],
+  datasets: [{
+    label: 'Website Metrics',
+    data: [],
+    backgroundColor: [
+      'rgba(255, 99, 132, 0.6)',
+      'rgba(54, 162, 235, 0.6)',
+      'rgba(255, 206, 86, 0.6)',
+      'rgba(75, 192, 192, 0.6)',
+    ],
+    borderWidth: 1,
+  }],
+};
+const lineChart = new Chart(document.getElementById('line-chart').getContext('2d'), {
+  type: 'line',
+  data: lineData,
+  options: {
+    scales: {
+      x: {
+        beginAtZero: true
+      },
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+const barChart = new Chart(document.getElementById('bar-chart').getContext('2d'), {
+  type: 'bar',
+  data: barData,
+  options: {
+    scales: {
+      x: {
+        beginAtZero: true
+      },
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+// Simulated real-time data updates
+setInterval(() => {
+  const now = new Date();
+  const timeLabel = now.toLocaleTimeString();
+  lineData.labels.push(timeLabel);
+  lineData.datasets[0].data.push(Math.random() * 1000);
+  barData.datasets[0].data = [Math.random() * 500, Math.random() * 500, Math.random() * 500, Math.random() * 500];
+  // Limit data to a fixed number of points (e.g., 10)
+  if (lineData.labels.length > 10) {
+    lineData.labels.shift();
+    lineData.datasets[0].data.shift();
+  }
+
+  // Update the charts
+  lineChart.update();
+  barChart.update();
+}, 2000);  // Update data every 2 seconds
+</script>
+</body>
+</html>

@@ -380,7 +380,7 @@
         .horizontal-list li a{
             text-decoration: none;
         }
-
+		/*GAME*/
        
         .social-icons li a i{
             padding: 10px;
@@ -388,6 +388,23 @@
             border-radius: 50%;
         }
 
+		.word {
+			display: inline-block;
+			padding: 5px 10px;
+			background-color: #f9c414;
+			color: #fff;
+			cursor: pointer;
+			margin: 5px;
+		}
+
+		.definition {
+			display: inline-block;
+			padding: 5px 10px;
+			background-color: #f0f0f0;
+			border: 2px dashed #ccc;
+			cursor: pointer;
+			margin: 5px;
+		}
 		
 
 	</style>
@@ -571,7 +588,20 @@
 	/ke17ZwdGBToddI8pDm48kBth9zuhSwWlCZUhUfBNymJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIoZw5LoXx68rflr-jiwsSV7LNHNi4o8wMKa-hx9LOmTs/VideoToGif_GIF.GIF?format=2500w" height="50%" width="35%" style="margin:2% 0 0 6%;border:7px double black;"></img>
 	<img src="https://www.adagioblog.com/wp-content/uploads/2016/10/output_kSoZsD.gif" height="50%" width="35%" style="margin:2% 0 0 10%;border:7px double black;"></img>
 	<img src="https://i.pinimg.com/originals/2a/03/ce/2a03ce687e281f668b4ceb456c6b741a.gif" height="50%" width="35%" style="margin:2% 0 0 6%;border:7px double black;"></img>
+<!--	GAME-->
+	<h1>Word Matching Game</h1>
+	<p>Drag and drop words to their correct definitions.</p>
 
+	<div class="word" id="word1" draggable="true" ondragstart="drag(event)">Baker</div>
+	<div class="word" id="word2" draggable="true" ondragstart="drag(event)">Dough</div>
+	<div class="word" id="word3" draggable="true" ondragstart="drag(event)">Oven</div>
+	<div class="word" id="word4" draggable="true" ondragstart="drag(event)">Yeast</div>
+
+	<div class="definition" id="definition1" ondrop="drop(event)" ondragover="allowDrop(event)">A person who bakes bread and pastries.</div>
+	<div class="definition" id="definition2" ondrop="drop(event)" ondragover="allowDrop(event)">A mixture of flour, water, and other ingredients used to make bread.</div>
+	<div class="definition" id="definition3" ondrop="drop(event)" ondragover="allowDrop(event)">An appliance used for baking or roasting food.</div>
+	<div class="definition" id="definition4" ondrop="drop(event)" ondragover="allowDrop(event)">A microorganism used in baking to make dough rise.</div>
+</div>
      <!-- Modal -->
      <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -643,6 +673,33 @@
         </div>
 
     </div>
-    
+    <script>
+<!--		GAME-->
+		function allowDrop(event) {
+			event.preventDefault();
+		}
+
+		function drag(event) {
+			event.dataTransfer.setData("text", event.target.id);
+		}
+
+		function drop(event) {
+			event.preventDefault();
+			var data = event.dataTransfer.getData("text");
+			var definition = event.target.id;
+			var word = document.getElementById(data);
+
+			// Check if the dropped word matches the definition
+			if (definition === "definition1" && word.id === "word1" ||
+					definition === "definition2" && word.id === "word2" ||
+					definition === "definition3" && word.id === "word3" ||
+					definition === "definition4" && word.id === "word4") {
+				event.target.appendChild(word);
+				word.style.backgroundColor = "#4CAF50"; // Correct match color
+			} else {
+				word.style.backgroundColor = "#FF5733"; // Incorrect match color
+			}
+		}
+	</script>
 </body>
 	</html>
