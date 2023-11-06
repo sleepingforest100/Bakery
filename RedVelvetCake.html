@@ -104,6 +104,13 @@
     </script>
 
     <style>
+        .bakery-image {
+            max-width: 100%;
+            transition: transform 0.2s;
+        }
+
+        .bakery-image:hover {
+            transform: scale(1.1);}
 
         body{
             background-color: #fc5e5e;
@@ -531,10 +538,10 @@
 
     <!--  I T E M   C A R D S  -->
 
-    <div id="main">
+    <div id="main" >
 
     	<div class="card">
-    		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Jrhmkwl6wAoZlbwcM9tdCQuFfTQ-qCelLg&usqp=CAU" class="item-img">
+    		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7Jrhmkwl6wAoZlbwcM9tdCQuFfTQ-qCelLg&usqp=CAU" class="item-img bakery-image">
     		<h1>Red Berries</h1>
             <form name="form">
                 <select id="a1" class="price-dropdown" name="select" Onchange="change()" value="Quanity and Price">
@@ -546,7 +553,7 @@
             </form>
             <p id="demo" class="item-price"></p>    
     		<p class="description">Red velvet with the goodness of berries!</p>
-    		<p><button onclick="add_to_cart('1','Red Berries','499')">Add to Cart</button></p>
+    		<p><button onclick="add_to_cart('1','Red Berries','499')" id="orderButton" class="btn btn-primary mt-3">Add to Cart</button></p>
     	</div>
 
     	<div class="card">
@@ -582,7 +589,7 @@
     	</div>
 
     	<div class="card">
-    		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrNhUCRsBn8B_tAHeBSnXnnVj8s3Ahv2Qp2w&usqp=CAU" class="item-img">
+    		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrNhUCRsBn8B_tAHeBSnXnnVj8s3Ahv2Qp2w&usqp=CAU" class="item-img bakery-image">
     		<h1>Velvet Fall</h1>
     		<form name="form4">
                 <select id="a4" class="price-dropdown" name="select4" Onchange="change4()" value="Quanity and Price-4">
@@ -594,7 +601,7 @@
             </form>
             <p id="demo4" class="item-price"></p>
     		<p class="description">Red velvet designed with strayberries cut like flower petals!</p>
-    		<p><button onclick="add_to_cart('4','Velvet Fall','549')">Add to Cart</button></p>
+    		<p><button onclick="add_to_cart('4','Velvet Fall','549')" class="btn btn-primary mt-3">Add to Cart</button></p>
     	</div>
 
     	<div class="card">
@@ -894,6 +901,25 @@
         </div>
 
     </div>
+    <script>
+        // Animation function
+        function animateImage() {
+            const image = document.querySelector(".bakery-image");
+            image.style.transform = "scale(1.1)";
+            setTimeout(() => {
+                image.style.transform = "scale(1)";
+            }, 200);
+        }
 
+        // Play sound function
+        function playOrderSound() {
+            const audio = new Audio("ding.mp3"); // Replace with your sound file
+            audio.play();
+        }
+
+        // Add click event listeners for animation and sound
+        document.querySelector(".bakery-image").addEventListener("click", animateImage);
+        document.getElementById("orderButton").addEventListener("click", playOrderSound);
+    </script>
 </body>
 </html>
