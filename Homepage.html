@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Sweet Retreat</title>
+
+	<meta charset="UTF-8">
+    <link rel = "shortcut icon" href="favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/815d5311a8.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="mycart.js"></script>
+	<script src="myscript.js"></script>
+    <script>
+
+        /* F O R   N A V I G A T I O N */
+
+        function myFunction() {
+            var x = document.getElementById("mynavTop");
+            if (x.className === "navtop") {
+                x.className += " responsive";
+            } else {
+                x.className = "navtop";
+            }
+        }
+
+
+        /* F O R   S L I D E S H O W */
+
+        var counter=1;
+        setInterval(function(){
+            document.getElementById("radio" + counter).checked=true;
+            counter++;
+            if (counter>7){
+                counter=1;
+            }
+        },3500);
+
+    </script>
+
+    <style>
+
+        body{
+            background-color: #f5deda;
+            font-family: "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+            margin: 0px;
+        }
+
+        /* N A V I G A T I O N */
+
+		.navtop {
+            overflow: hidden;
+            background-color: #E8A49E;
+        }
+
+        .navtop a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navtop .icon {
+            display: none;
+        }
+
+        .drop_down {
+            float: left;
+            overflow: hidden;
+        }
+
+        .drop_down .dropdown_btn {
+            font-size: 17px;    
+            border: none;
+            outline: none;
+            color: black;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .drop-content {
+            display: none;
+            position: absolute;
+            background-color: #e6b2b2;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .drop-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .navtop a:hover, .drop_down:hover .dropdown_btn, .search-container button:hover{
+            background-color: #81B7B6;
+            color: white;
+        }
+
+        .drop-content a:hover {
+            background-color: #7CB2A4;
+            color: white;
+        }
+
+        .drop_down:hover .drop-content {
+            display: block;
+        }
+
+        @media screen and (max-width: 920px) {
+            .navtop input[type=text] {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 698px) {
+            .navtop a:not(:first-child), .dropdown .dropbtn {
+                display: none;
+            }
+
+            .navtop a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 698px) {
+            .navtop.responsive {position: relative;}
+            .navtop.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .navtop.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .navtop.responsive .drop_down {float: none;}
+            .navtop.responsive .drop-content {position: relative;}
+            .navtop.responsive .drop_down .dropdown_btn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+
+            .navtop input[type=text] {
+                display: inline;
+                padding: 6px;
+                margin-top: 8px;
+                font-size: 17px;
+                border: none;
+            }
+
+        }
+
+        @media screen and (max-width: 488px) {
+            .navtop input[type=text] {
+                display: none;
+            }
+        }
+
+        .search-container {
+            float: right;
+        }
+
+        .navtop input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #7CB2A4;
+            font-size: 17px;
+            border: none;
+        }
+
+
+
+        /* M A I N - C O N T E N T */
+
+        /*  B A K E R Y   N A M E   A N D   I C O N  */
+
+        #bakery-name{
+            background-image: url(https://i.pinimg.com/564x/dc/ad/77/dcad777dd875e31bd7b361a3e4c0c012.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 2%;
+        }
+
+        #bakery-name img{
+            height: 25%;
+            width: 25%;
+            border-radius: 50%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /*  S L I D E S H O W  */
+
+        .slider{
+            width: 100vh;
+            height: 90vh;
+            overflow: hidden;
+            position: relative;
+            left: 58vh;
+            top: -8vh;
+        }
+
+        .slides{
+            width: 500%;
+            height: 200vh;
+            display: flex;
+            position: relative;
+            top: 25vh;
+        }
+
+        .slides input{
+            display: none;
+        }
+
+        .slide{
+            width: 20%;
+            transition: 2s;
+        }
+
+        .slide img{
+            width:100vh;
+            height:60vh;
+        }
+
+        /* css for manual slide navigation */
+        .navigation-manual{
+            position:absolute;
+            width:100vh;
+            margin-top:-730px;
+            display:flex;
+            justify-content:center;
+        }
+
+        .manual-btn{
+            border:2px solid black;
+            padding:5px;
+            border-radius:10px;
+            cursor:pointer;
+            transition:1s;
+        }
+
+        .manual-btn:not(:last-child){
+            margin-right:40px;
+        }
+
+        .manual-btn:hover{
+            background: grey;
+        }
+
+        #radio1:checked ~ .first{
+            margin-left:0;
+        }
+
+        #radio2:checked ~ .first{
+            margin-left:-20%;
+        }
+
+        #radio3:checked ~ .first{
+            margin-left:-40%;
+        }
+
+        #radio4:checked ~ .first{
+            margin-left:-60%;
+        }
+
+        #radio5:checked ~ .first{
+            margin-left:-80%;
+        }
+
+        #radio6:checked ~ .first{
+            margin-left:-100%;
+        }
+
+        #radio7:checked ~ .first{
+            margin-left:-120%;
+        }
+
+        /* css for automatic navigation */
+        .navigation-auto{
+            position:absolute;
+            display:flex;
+            width:800px;
+            justify-content:center;
+            margin-top:460px;
+        }
+
+        .navigation-auto div{
+            border:2px solid black;
+            padding: 5px;
+            border-radius:10px;
+            transition:1s;
+        }
+
+        .navigation-auto div:not(:last-child){
+            margin-right:40px;
+        }
+
+        #radio1:checked ~ .navigation-auto .auto-btn1{
+            background:gray;
+        }
+
+        #radio2:checked ~ .navigation-auto .auto-btn2{
+            background:gray;
+        }
+
+        #radio3:checked ~ .navigation-auto .auto-btn3{
+            background:gray;
+        }
+
+        #radio4:checked ~ .navigation-auto .auto-btn4{
+            background:gray;
+        }
+
+        #radio5:checked ~ .navigation-auto .auto-btn5{
+            background:gray;
+        }
+
+        #radio6:checked ~ .navigation-auto .auto-btn6{
+            background:gray;
+        }
+
+        #radio7:checked ~ .navigation-auto .auto-btn7{
+            background:gray;
+        }
+/*chat box*/
+		.open-button {
+			background-color:#E8A49E;
+			border: none;
+			cursor: pointer;
+			position: fixed;
+			bottom: 5%;
+			left: 93%;
+			}
+
+			/* The popup chat - hidden by default */
+			.chat-popup {
+			display: none;
+			position: fixed;
+			bottom: 0;
+			right: 15px;
+			border: 3px solid #f1f1f1;
+			z-index: 9;
+			}
+
+		/* Add styles to the form container */
+		.form-container {
+		max-width: 300px;
+		padding: 10px;
+		background-color: white;
+		}
+
+		/* Full-width textarea */
+		.form-container textarea {
+		width: 100%;
+		padding: 15px;
+		margin: 5px 0 22px 0;
+		border: none;
+		background: #f1f1f1;
+		resize: none;
+		min-height: 200px;
+		}
+
+		/* When the textarea gets focus, do something */
+		.form-container textarea:focus {
+		background-color: #ddd;
+		outline: none;
+		}
+
+		/* Set a style for the submit/send button */
+		.form-container .btn {
+		background-color: #04AA6D;
+		color: white;
+		padding: 16px 20px;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		margin-bottom:10px;
+		opacity: 0.8;
+		}
+
+		/* Add a red background color to the cancel button */
+		.form-container .cancel {
+		background-color: red;
+		}
+
+		/* Add some hover effects to buttons */
+		.form-container .btn:hover, .open-button:hover {
+		opacity: 1;
+		}
+
+
+        /*  I T E M S   D I V S  */
+
+        #items-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 50px;
+        }
+
+        .items{
+            border: 1.5px solid black;
+            margin:30px;
+            box-shadow: 3px 3px 15px grey;
+            transition: 1s ease-in-out;
+        }
+
+        .items img{
+            height: 200px;
+            width: 200px;
+        }
+
+        .items:hover{
+            box-shadow: 5px 5px 25px white;
+        }
+
+        .item-names{
+            background-color: white;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0px;
+            padding: 2%;
+            
+        }
+
+        a:link{
+            text-decoration: none;
+            color: black;
+        }
+
+        a:visited{
+            text-decoration: none;
+            color: #454545;
+        } 
+
+        /* P A R T Y   P R O P S */
+
+        #props {
+            position: relative;
+            text-align: center;
+            margin: 8%;
+            border: 3px solid black;
+        }
+
+        #props img{
+            height: 300px; 
+            width: 100%;           
+        }
+
+        #props-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white; 
+            padding: 0.5% 3%;
+            font-size: 35px;
+            font-style: italic;
+            text-shadow: 2px 2px yellow;
+        }
+
+        /* P O L L   S E C T I O N */
+
+        .flex-container {
+            display: flex;
+			flex-wrap: wrap;
+            padding: 4%;
+        }
+
+        .flex-child {
+            flex: 1;
+            background-color: lightblue;
+            padding: 2%;
+            margin-bottom: 2rem;
+        }  
+
+        .flex-child:first-child {
+            margin-right: 20px;
+        } 
+
+        .poll1{
+            display :flex;
+            height:260px;
+            width:400px;
+            flex-direction:row;
+            flex-wrap:wrap-reverse;
+            position:relative;
+            background-color:#f0e9e9;
+            border-radius:7px;    
+        }
+
+        .poll{
+            width:22px;
+            margin-left:20px;
+            border-radius:8px;
+            color:white;
+            font-size:20px;
+            text-indent:30px;
+        }
+
+        #div1{
+            height:200px;
+            background-color:#b33380;
+            writing-mode: vertical-rl;
+        }
+
+        #div2{
+            height:260px;
+            background-color:pink;
+            writing-mode: vertical-rl;
+        }
+
+        #div3{
+            height:100px;
+            background-color:#b33380;
+            writing-mode: vertical-rl;
+        }
+
+        #div4{
+            height:200px;
+            background-color:pink;
+            writing-mode: vertical-rl;
+        }
+
+        #div5{
+            height:150px;
+            background-color:#b33380;
+            writing-mode: vertical-rl;
+        }
+
+        #div6{
+            height:170px;
+            background-color:pink;
+            writing-mode: vertical-rl;
+        }
+
+        #div7{
+            height:200px;
+            background-color:#b33380;
+            writing-mode: vertical-rl;
+        }
+
+        #div8{
+            height:90px;
+            background-color:pink;
+            writing-mode: vertical-rl;
+        }
+
+        /* S P E C I A L S   +   C O N T E S T S */
+
+        #new-item-container{
+            margin:2% 0%;
+            padding: 2%;
+
+        }
+
+        .newitem{
+            border-radius:18px;
+            margin: 4% 0%;
+        }
+
+        #contest{
+            height:500px;
+            width:500px;
+        }
+
+        #special-heading{
+            color:#b33380; 
+            background-color:pink; 
+            font-style: italic; 
+            text-decoration: underline;
+            font-size: 30px;
+            padding: 5px;
+        }
+
+        .special-image{
+            height:300px;
+            width:80%;   
+            margin: 2%;
+        }
+
+        .blink{
+            color:#b33380; 
+            font-size:45px;
+            font-style: italic;
+            text-decoration: underline;
+            animation:blink 2.5s infinite alternate;
+        }
+    
+        @keyframes blink{
+            0%{color: yellow;}
+            100%{color: red;};
+        }
+
+        .participate:hover{
+            font-weight: bold;
+        }
+
+
+        /* G A L L E R Y */
+
+        #gallery{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+            position:relative;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pics{
+            height:200px;
+            width:200px;
+            border-radius:20%;
+            margin:2% 0 0 5%;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin:30px;
+            transition: 1s ease-in-out;
+        }
+
+        div.pics:hover{transform:scaleX(1.1);
+            box-shadow:1px 1px 2px red,0 0 25px pink,0 0 5px darkblue;
+        }
+
+        #pic1{
+            background-image:url("https://i.pinimg.com/564x/5c/35/16/5c35162a9108a131e32c855aa3756864.jpg");
+        }
+
+        #pic2{
+            background-image:url("https://i.pinimg.com/originals/40/c1/fb/40c1fbd12c0efadaa3833727f28e32e0.jpg");
+        }
+
+        #pic3{
+            background-image:url("https://i.pinimg.com/originals/c5/f9/eb/c5f9eb4505b4c26d7cfd10de1f85dc23.jpg");
+        }
+
+        #pic4{
+            background-image:url("https://www.deliciaecakes.com/static/b2a765e9068817f9bcf60a222d191416/33aa5/cover-Animal%20%26%20Water%20Theme.jpg");
+        }
+
+        #pic5{
+            background-image:url("http://www.sru.edu//images/news/2019/June/062719a-Inline.jpg");
+        }
+
+        #pic6{
+            background-image:url("https://i.pinimg.com/originals/23/6c/de/236cde3fefca613d4dac24147083591e.jpg");
+        }
+
+        #pic7{
+            background-image:url("https://i.pinimg.com/originals/0a/5d/0f/0a5d0f5cb6fcd65635daf06cf3056be5.jpg");
+        }
+
+        #pic9{
+            background-image:url("https://i1.fnp.com/images/pr/l/v20201219020946/hearty-choco-kitkat-cake-half-kg_1.jpg");
+        }
+
+        #pic10{
+            background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2RjR3mJ1Ge4zCVwrpFlNIc5Qc-bsnn84Ag&usqp=CAU");
+        }
+
+        #pic11{
+            background-image:url("https://image.slidesharecdn.com/imageservice-190624130124/95/send-happy-birthday-cake-for-your-mother-1-638.jpg?cb=1561381301");
+        }
+
+        #pic12{
+            background-image:url("https://thumbs.dreamstime.com/b/two-beautiful-kids-little-preschool-boys-celebrating-birthday-blowing-candles-homemade-baked-cake-indoor-birthday-party-114545200.jpg");
+        }
+
+        #pic15{
+            background-image:url("https://images.indianexpress.com/2020/09/Abhishek-Nigam-Siddharth-photo.jpg?w=350");
+        }
+
+        #pic16{
+            background-image:url("https://i.pinimg.com/originals/34/c0/43/34c04314a94cd691806cae92cf9a72a3.jpg");
+        }
+
+        #pic17{
+            background-image:url("https://live.staticflickr.com/5293/5431619947_749702661f_b.jpg");
+        }
+
+        #pic18{
+            background-image:url("https://i.pinimg.com/originals/e9/2c/25/e92c25838da94fa815fea65e2c05caa0.png");
+        }
+
+        #pic19{
+            background-image:url("https://imgix.bustle.com/uploads/shutterstock/2019/10/21/48e0074c-6e41-4da0-bc77-d85b59f76198-shutterstock-538408189.jpg?w=610&fit=max&auto=format%2Ccompress");
+        }
+
+        #pic20{
+            background-image:url("https://i.pinimg.com/564x/82/a8/ba/82a8ba7c589de134899bf8dc6477313e.jpg");
+        }
+
+        #pic21{
+            background-image:url("https://i.pinimg.com/474x/04/42/06/044206a2478c0d43dd7b2d99ab2d5a0e.jpg");
+        }
+
+
+
+        /* A B O U T */
+
+        #about{
+            border: 3px solid black;
+            margin: 5%;
+            padding: 3% 5% 0% 5%;
+        }
+
+        #values-img{
+            height: 10px;
+            width: 100%; 
+            margin: 2% 0%;
+        }
+
+        #details-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin: 50px;
+            padding: 2%;
+        }
+
+        .details-child{
+            margin: 2% 5%;
+        }
+
+        .about-subheading{
+            font-style: italic; 
+            text-align: center;
+            color: red;
+        }
+
+        .subheading-content{
+            font-style: italic; 
+            text-align: center; 
+            color: grey; 
+            font-size: 18px;
+        }
+
+        /* F O O T E R   +   S O C I A L   I C O N S */
+
+        #footer{
+            background-image: linear-gradient(to right, lightblue , lightpink);
+            padding: 5%;
+        }
+
+        #social-container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .social-icons li a i {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 50%;
+            transition: 1.5s ease-in-out;
+        }
+
+
+        .social-icons li a i:hover {
+            box-shadow: 0px 0px 6px 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer__contact{
+            font-size: 2rem;
+        }
+
+        .footer__mail{
+            font-size: 2rem;
+        }
+
+        .horizontal-list{
+              list-style: none;
+              padding-left: 0px;
+              margin: 0px;
+        }
+
+        .horizontal-list li{
+          display: inline-block;
+          margin: 0px 8px 8px 0px;
+          font-weight: 100;
+          font-size: 2.5rem;
+        }
+
+        .horizontal-list li a{
+            text-decoration: none;
+        }
+
+       
+        .social-icons li a i{
+            padding: 10px;
+            font-size: 2.5rem;
+            border-radius: 50%;
+        }
+
+        @media only screen and (max-width:73em){
+            .slider{
+                position: relative;
+                left: 55vh;
+            }
+		}
+        @media only screen and (max-width:70em){
+            .slider{
+                position: relative;
+                left: 52vh;
+            }
+		}
+        @media only screen and (max-width:67em){
+            .slider{
+                position: relative;
+                left: 45vh;
+            }
+		}
+        @media only screen and (max-width:64em){
+            .slider{
+                position: relative;
+                left: 38vh;
+            }
+		}
+        @media only screen and (max-width:61em){
+            .slider{
+                position: relative;
+                left: 33vh;
+            }
+		}
+        @media only screen and (max-width:58em){
+            .slider{
+                position: relative;
+                left: 28vh;
+            }
+		}
+        @media only screen and (max-width:55em){
+            .slider{
+                position: relative;
+                left: 24vh;
+            }
+		}
+        @media only screen and (max-width:52em){
+            .slider{
+                position: relative;
+                left: 20vh;
+            }
+		}
+        @media only screen and (max-width:49em){
+            .slider{
+                position: relative;
+                left: 16vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:46em){
+            .slider{
+                position: relative;
+                left: 12vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:43em){
+            .slider{
+                position: relative;
+                left: 9vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:41em){
+            .slider{
+                position: relative;
+                left: 6vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:39em){
+            .slider{
+                position: relative;
+                left: 4vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:38em){
+            .slider{
+                position: relative;
+                left: 2.6vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:37em){
+            .slider{
+                position: relative;
+                left: 1.4vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:36.8em){
+            .slider{
+                position: relative;
+                left: 0.8vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:36.5em){
+            .slider{
+                position: relative;
+                left: 0.4vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:36.3em){
+            .slider{
+                width: 98vh;
+                position: relative;
+                left: 1vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:36em){
+            .slider{
+                width: 95vh;
+                position: relative;
+                left: 2.5vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:35.8em){
+            .slider{
+                width: 93vh;
+                position: relative;
+                left: 2.6vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:35.6em){
+            .slider{
+                width: 91vh;
+                position: relative;
+                left: 2.9vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:35.4em){
+            .slider{
+                width: 91vh;
+                position: relative;
+                left: 2.9vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:35em){
+            .slider{
+                width: 91vh;
+                position: relative;
+                left: 2.9vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:34.7em){
+            .slider{
+                width: 91vh;
+                position: relative;
+                left: 2.5vh;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:34.5em){
+            .slider{
+                width: 91vh;
+                position: relative;
+                left: 2.3vh;
+            }
+            .footer__contact{
+                font-size: 1.6rem;;
+            }
+            .footer__mail{
+                font-size: 1.7rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:34.2em){
+            .slider{
+                width: 91vh;
+                position: relative;
+                left: 1.6vh;
+            }
+            .footer__contact{
+                font-size: 1.6rem;;
+            }
+            .footer__mail{
+                font-size: 1.7rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:34em){
+            .slider{
+                width: 90vh;
+                position: relative;
+                left: 1.6vh;
+            }
+            .footer__contact{
+                font-size: 1.6rem;;
+            }
+            .footer__mail{
+                font-size: 1.7rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:33.8em){
+            .slider{
+                width: 89vh;
+                position: relative;
+                left: 1.7vh;
+            }
+            .footer__contact{
+                font-size: 1.6rem;;
+            }
+            .footer__mail{
+                font-size: 1.7rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:33.5em){
+            .slider{
+                width: 88vh;
+                position: relative;
+                left: 1.9vh;
+            }
+            .footer__contact{
+                font-size: 1.6rem;;
+            }
+            .footer__mail{
+                font-size: 1.7rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:33.3em){
+            .slider{
+                width: 87vh;
+                position: relative;
+                left: 2vh;
+            }
+            .footer__contact{
+                font-size: 1.6rem;;
+            }
+            .footer__mail{
+                font-size: 1.7rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:33em){
+            .slider{
+                width: 86vh;
+                position: relative;
+                left: 2.1vh;
+            }
+            .footer__contact{
+                font-size: 1.6rem;;
+            }
+            .footer__mail{
+                font-size: 1.7rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:32.8em){
+            .slider{
+                width: 85vh;
+                position: relative;
+                left: 2.3vh;
+            }
+            .footer__contact{
+                font-size: 1.6rem;;
+            }
+            .footer__mail{
+                font-size: 1.7rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:32.6em){
+            .slider{
+                width: 84vh;
+                position: relative;
+                left: 2.5vh;
+            }
+            .footer__contact{
+                font-size: 1.6rem;;
+            }
+            .footer__mail{
+                font-size: 1.7rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:32.2em){
+            .slider{
+                width: 84vh;
+                position: relative;
+                left: 2.4vh;
+            }
+            .footer__contact{
+                font-size: 1.4rem;;
+            }
+            .footer__mail{
+                font-size: 1.5rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+        @media only screen and (max-width:31.9em){
+            .slider{
+                width: 83vh;
+                position: relative;
+                left: 1.8vh;
+            }
+            .footer__contact{
+                font-size: 1.2rem;;
+            }
+            .footer__mail{
+                font-size: 1.3rem;
+            }
+            .flex-child:first-child{
+                margin-right: 0;
+            }
+		}
+
+        @media screen and (max-width: 25.875em) {
+            .navtop{
+                width: 622px;
+            }
+            #bakery-name{
+                width: 622px;
+            }
+            #bakery-name img{
+                height: 40%;
+                width: 40%;
+                border-radius: 50%;
+            }
+            .slider{
+                width: 81vh;
+            }
+            .auto-btn7{
+                margin-right: 40vw;
+            }
+            #items-container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(255, 255, 255, 0.5);
+                width: 130vw;
+                margin-left: 10vw;
+            }
+            #props{
+                width: 130vw;
+                margin-left: 10vw;
+            }
+            .flex-container{
+                width: 143vw;
+                margin-left: 6vw;
+            }
+            .flex-child{
+                width: 131.5vw;
+            }
+            #about{
+                width: 130vw;
+                margin-left: 10vw;
+            }
+            #footer{
+                width: 150vw;
+            }
+        }
+
+        @media screen and (max-width: 24em) {
+            .navtop{
+                width: 670px;
+                height: 50px;
+            }
+            #bakery-name{
+                width: 670px;
+            }
+            #bakery-name img{
+                height: 50%;
+                width: 50%;
+                border-radius: 50%;
+            }
+            .slider{
+                width: 79vh;
+            }
+            #items-container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(255, 255, 255, 0.5);
+                width: 158vw;
+                margin-left: 10vw;
+            }
+            #props{
+                width: 158vw;
+                margin-left: 10vw;
+            }
+            .flex-container{
+                width: 172vw;
+                margin-left: 6vw;
+            }
+            .flex-child{
+                width: 159.5vw;
+            }
+            #about{
+                width: 158vw;
+                margin-left: 10vw;
+            }
+            #footer{
+                width: 178vw;
+            }
+        }
+
+        .googlemap{
+            position:  relative;
+            padding-bottom:  40%;
+            height:  0;
+            overflow: hidden;
+        }
+
+        .google-maps iframe{
+            position:  absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <!--  N A V I G A T I O N  -->
+
+    <div class="topnav" id="myTopnav">
+
+        <div class="navtop" id="mynavTop">
+    
+            <a href="Homepage.html">Home</a>
+            <div class="drop_down">
+                <button class="dropdown_btn">Items 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="drop-content">
+                    <a href="Cakes.html">Cakes</a>
+                    <a href="Pastries.html">Pastries</a>
+                    <a href="Cupcakes.html">Cupcakes</a>
+                    <a href="BiscuitsAndCookies.html">Cookies</a>
+                    <a href="Donut.html">Donuts</a>
+                    <a href="Waffles.html">Waffles</a>
+                    <a href="Breads.html">Breads</a>
+                    <a href="Others.html">Others</a>
+                </div>
+            </div>
+        <a href="KitchenPage.html">Our Kitchen</a>
+        <a href="PartyProps.html">Props</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="FAQ.html" target="_blank">FAQ</a>
+        <a href="" style="float: right;" data-toggle="modal" data-target="#cart"><i class="fas fa-shopping-cart"></i><span class="cart-items">( 0 )</span></a>
+        <a href="SignUp Page.html" target="_blank" style="float: right;"><i class="fas fa-user"></i></a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+
+        <div class="search-container">
+            <input type="text" placeholder="Search" name="search" pattern=[A-Za-z]>
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!--  B A K E R Y   N A M E   D I V  -->
+
+    <div id="bakery-name">
+        <img src="https://i.pinimg.com/originals/5b/08/e7/5b08e7e7c1d646f249791941bcdc274c.png">
+    </div>
+
+
+    <!--   S L I D E S H O W   -->
+
+    <div class="slideshow">
+    <div class="slider">
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1" />
+            <input type="radio" name="radio-btn" id="radio2" />
+            <input type="radio" name="radio-btn" id="radio3" />
+            <input type="radio" name="radio-btn" id="radio4" />
+            <input type="radio" name="radio-btn" id="radio5" />
+            <input type="radio" name="radio-btn" id="radio6" />
+            <input type="radio" name="radio-btn" id="radio7" />
+
+            <div class="slide first">
+                <img src="https://thumbs.dreamstime.com/b/birthday-cake-chocolate-candles-70779992.jpg"/>
+            </div>
+
+            <div class="slide">
+                <img src="https://c4.wallpaperflare.com/wallpaper/161/866/449/food-dessert-cake-pastry-wallpaper-preview.jpg"/>
+            </div>
+
+            <div class="slide">
+                <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2020/02/Paleo-Chocolate-Cupcake-8.jpg"/>
+            </div>
+
+            <div class="slide">
+                <img src="https://bakingmischief.com/wp-content/uploads/2019/09/crispy-waffles-image-square.jpg"/>
+            </div>
+
+            <div class="slide">
+                <img src="https://wallpapercave.com/wp/wp3031763.jpg"/>
+            </div>
+
+            <div class="slide">
+                <img src="https://img.wallpapersafari.com/desktop/1680/1050/19/1/Ahu7vX.jpg"/>
+            </div>
+
+            <div class="slide">
+                <img src="https://cdn.wallpapersafari.com/81/65/8pLkTP.jpg"/>
+            </div>
+
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+                <div class="auto-btn5"></div>
+                <div class="auto-btn6"></div>
+                <div class="auto-btn7"></div>
+            </div>
+        </div>
+
+        <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+            <label for="radio5" class="manual-btn"></label>
+            <label for="radio6" class="manual-btn"></label>
+            <label for="radio7" class="manual-btn"></label>
+        </div>
+    </div>
+    </div>
+
+	<!--chat box--->
+	<button class="open-button" onclick="openForm()"><i class="fas fa-envelope-open-text fa-4x"></i></button>
+
+	<div class="chat-popup" id="myForm">
+	  <form action="#" class="form-container">
+		<h1>Chat</h1>
+
+		<label for="msg"><b>Message</b></label>
+		<textarea placeholder="Type message.." name="msg" required></textarea>
+
+		<button type="submit" class="btn">Send</button>
+		<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+	  </form>
+	</div>
+
+    <!--  I T E M S  -->
+
+    <div id="items-container">
+
+        <a href="cakes.html">
+            <div class="items">
+                <img src= "https://i.pinimg.com/originals/72/23/5d/72235dbf0d178dc9d6ab60b8ecf6157e.jpg">
+                <p class="item-names">Cakes</p>
+            </div>
+        </a>
+
+        <a href="pastries.html">
+            <div class="items">
+                <img src="https://i.pinimg.com/originals/55/d3/ec/55d3ec4a9f46d69a323a2cf539e4fd4a.jpg">
+                <p class="item-names">Pastries</p>
+            </div>
+        </a>
+
+        <a href="cupcakes.html">
+            <div class="items">
+                <img src="https://i.pinimg.com/originals/41/60/42/41604219fd2043f686d91b6250c0f1a9.jpg">
+                <p class="item-names">Cupcakes</p>
+            </div>
+        </a>
+
+        <a href="BiscuitsAndCookies.html">
+            <div class="items">
+                <img src="https://i.pinimg.com/originals/76/45/db/7645db87ef339f73d3222c35407ec684.jpg">
+                <p class="item-names">Cookies</p>
+            </div>
+        </a>
+
+        <a href="Donut.html">
+            <div class="items">
+                <img src="https://i.pinimg.com/originals/39/2e/de/392ede02ee501511d78be9ca2d5258c7.jpg">
+                <p class="item-names">Donuts</p>
+            </div>
+        </a>
+
+        <a href="Waffles.html">
+            <div class="items">
+                <img src="https://i.pinimg.com/originals/67/87/34/678734c50f0947eb6a18bfc6edbfd196.jpg">
+                <p class="item-names">Waffles</p>
+            </div>
+        </a>
+
+        <a href="breads.html">
+            <div class="items">
+                <img src="https://i.pinimg.com/originals/d0/67/0a/d0670aedcc2c633442250cf52175be07.jpg">
+                <p class="item-names">Breads</p>
+            </div>
+        </a>
+
+        <a href="others.html">
+            <div class="items">
+                <img src="https://i.pinimg.com/originals/27/0a/7c/270a7c1f45ba65f3602d27e0413935e9.jpg">
+                <p class="item-names">Others</p>
+            </div>
+        </a>
+
+    </div>
+
+
+    <!--  P A R T Y   P R O P S  -->
+
+    <div id="props">
+        <img src="https://i.pinimg.com/736x/a6/93/98/a69398e27635d32c5ea887feecdd0747.jpg">
+        <div id="props-text">
+            <a href="PartyProps.html">
+                <h3>Party Props</h3>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- P O L L  A N D   N E W   I T E M S -->
+
+    <div class="flex-container">
+
+        <div class="flex-child">
+
+            <h1 class="blink">
+                    Today's Poll!
+                </h1>
+            <p style="font-size:20px;">Check the customer's opinion on our top items and select the perfect one for you!</p>
+
+            <div id="div" class="poll1" >
+                <div id="div1" class="poll">Cookies</div>
+                <div id="div2" class="poll">Pastries</div>
+                <div id="div3" class="poll">Donuts</div>
+                <div id="div4" class="poll">Cupcakes</div>
+                <div id="div5" class="poll">Waffles</div>
+                <div id="div6" class="poll">Breads</div>
+                <div id="div7" class="poll">Croissant</div>
+                <div id="div8" class="poll">Cakes </div>
+            </div>
+
+            <p style="font-size:18px;"><I>Order our top 3 rated items now and get <b>20% off</b>!</I> </p>
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+                <a href="#items-container">Order Now</a>
+            </button><br>
+
+            <div id="new-item-container">
+
+                <h1 class="blink">
+                    SPECIALS!
+                </h1>
+
+                    <p style="font-size:20px;">We're always excited to serve our customers the latest in the trend and best in the quality. So, here we bring two new mouth watering special desserts for you!</p>
+
+                    <div class="newitem">
+
+                        <h1 id="special-heading">Pinata Cake</h1>
+                        <p style="font-size:20px;">The piñata cake is named after the Mexican party centrepieces made from papier mache and filled with gifts, and has a hollow centre which is used to hold your favourite sweets.</p>
+                        <img src="https://i.pinimg.com/474x/c1/02/6b/c1026b1286f4b608e91dceab98f324ef.jpg" class="special-image">
+                        <br>
+                        <button type="button" onclick="add_to_cart('1','Pinata Cake','199')"  class="btn btn-outline-secondary btn-sm">
+                            Order Now
+                        </button>
+
+                    </div>
+
+                    <div  class="newitem">
+
+                        <h1 id="special-heading">Cheese Cake</h1>
+                        <p style="font-size:20px;">Cheesecake is a sweet dessert consisting of one or more layers. The main, and thickest, layer consists of a mixture of a soft, fresh cheese, eggs, and sugar. If there is a bottom layer, it most often consists of a crust or base made from crushed cookies, graham crackers, pastry, or sometimes sponge cake.</p>
+                        <img src="https://i.pinimg.com/474x/24/6a/d2/246ad261e4e928b2f25c4658ff3017eb.jpg" class="special-image">
+                        <br>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="add_to_cart('2','Cheese Cake','250')">
+                           Order Now
+                        </button>
+
+                    </div>
+            </div>
+
+            <div class="new-item-container">
+                <h1 class="blink">
+                    Participate and Earn!
+                </h1>
+                <i><p style="font-size:22px;">"Find something you're passionate about and keep yourself tremendously interested in it."<br>-Julia Child</p></i>
+                <p style="font-size:20px;"> Make any of the item found in a bakery and upload its recipe and picture; along with some other necessary personal details and send it to us to win exciting prizes!<br> <a href="ParticipationForm.html" class="participate" style="text-decoration: none; color:blue"  target="_blank"><i>Click here for the participation form!</i></a></p>
+                <img src="https://i.pinimg.com/474x/4d/4b/c6/4d4bc6763ed4769d202dfe3ccb8498ac.jpg" class="special-image">
+            </div>
+
+        </div>
+
+
+        <!-- G A L L E R Y -->
+
+        <div class="flex-child">
+
+            <div id="gallery">
+                    <h1 align="center" style="font-size: 3.5em; color:purple; margin: 2%; text-align: center; width:100%;"><u>GALLERY</u></h1>
+                    <div class="pics" id="pic1"></div>
+                    <div class="pics" id="pic2"></div>
+                    <div class="pics" id="pic3"></div>
+                    <div class="pics" id="pic4"></div>
+                    <div class="pics" id="pic5"></div>
+                    <div class="pics" id="pic6"></div>
+                    <div class="pics" id="pic7"></div>
+                    <div class="pics" id="pic9"></div>
+                    <div class="pics" id="pic10"></div>
+                    <div class="pics" id="pic11"></div>
+                    <div class="pics" id="pic12"></div>
+                    <div class="pics" id="pic15"></div>
+                    <div class="pics" id="pic16"></div>
+                    <div class="pics" id="pic17"></div>
+                    <div class="pics" id="pic18"></div>
+                    <div class="pics" id="pic19"></div>   
+                    <div class="pics" id="pic20"></div>
+                    <div class="pics" id="pic21"></div>             
+            </div><br>
+            <button type="button" class="btn btn-outline-secondary btn-bg" style="margin-left: 10%">
+                <a href="Gallery.html">View More</a>
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!--  O U R   K I T C H E N  -->
+
+    <div id="props">
+        <img src="https://www.buzztime.com/business/wp-content/uploads/2017/09/kitchen-inspection-750-x-340.jpg">
+        <div id="props-text">
+            <a href="KitchenPage.html">
+                <h3>Our Kitchen</h3>
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- A B O U T -->
+
+    <div id="about">
+        <h1 style="font-style: italic; text-align: center;"><b>Presence</b></h1>
+        <h4 style="font-style: italic; text-align: center; color: grey; font-size: 18px;">"Our aim is to continue enriching the global sweet market."</h4><br>
+        <p style="text-align: justify;">
+            Consisting of a team of field experts and talented management board, we are collectively concentrating our effort to spread the goodness of organically baked goods as far as possible. Over the course of the production, we have been challenging ourselves every single step. In search for a unique and fulfilling experience for our customers, our sweet team has been sharing and discussing the tastes and knowledge with our quality-demanding food experts from numerous cafés, restaurants, and hotels worldwide. We are trying to smoothly build a healthy, medium-sized company; placing emphasis on creating and maintaining a warm relationships with our customers and business partners.
+        </p>
+        <div>
+            <img src="http://www.sweetdelight.eu/archiv/about1.jpg" id="values-img">
+        </div>
+
+        <h1 style="font-style: italic; text-align: center;"><b>Values</b></h1>
+        <h4 style="font-style: italic; text-align: center; color: grey; font-size: 18px;">"We believe in uniqueness."</h4><br>
+        <p style="text-align: justify;">
+            Our philosophy is baked from the freshest of ingredients. We have combined systematic and inspiring collaboration with our employees by using the best raw materials and machines, together with customers’ expectations, high technological approaches to producing sweets our aspirations, as well as undying respect for quality and safety. We believe that the results will always be absolutely unique and fulfilling!
+        </p>
+        <div>
+            <img src="http://www.sweetdelight.eu/archiv/about1.jpg" id="values-img">
+        </div>
+
+        <div id="details-container">
+
+          <div class="details-child">
+            <h3 class="about-subheading"><b>10 years</b></h3>
+            <h4 class="subheading-content">delivering the unmatched<br>quality to all passionate<br>cake lovers.</h4>
+          </div>
+
+          <div class="details-child">
+            <h3 class="about-subheading"><b>50 employees</b></h3>
+            <h4 class="subheading-content">producing the unique sweet<br>solutions delighting<br>customers' demands.</h4>
+          </div>
+
+          <div class="details-child">
+              <h3 class="about-subheading"><b>7,500,000 Kg</b></h3>
+              <h4 class="subheading-content">of baked goodies adored,<br>eaten and appreciated<br>by customers.</h4>
+          </div>
+
+          <div class="details-child">
+              <h3 class="about-subheading"><b>25 destinations</b></h3>
+              <h4 class="subheading-content">all around the world <br>taking pleasure<br> in our cakes.</h4>
+          </div>
+
+          <div class = "googlemap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1715.209484784108!2d76.801824!3d30.706620000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x947c146c0695123!2sElante%20Mall!5e0!3m2!1sen!2sus!4v1636646428176!5m2!1sen!2sus" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- F O O T E R   S O C I A L   I C O N S -->
+
+    <div id="footer">
+
+        <div id="social-container">
+
+            <div class="footer__contact">
+               <i> +91 99999 88888</i>
+            </div>
+
+            <div class="footer__social">
+                <ul class="horizontal-list text-center social-icons">
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-pinterest fa-4x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__mail">
+                <i>sweetretreat@gmail.com</i>
+            </div>
+
+        </div>
+
+    </div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+			<h3 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">Your Cart</h3>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			</div>
+			<div class="modal-body">
+
+			<div class="cart-body">
+			</div>
+
+			</div>
+			<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a href = "Checkout.html" target = "_blank">
+			    <button type="button" class="btn btn-primary checkout-btn" onclick="Checkout()">Checkout</button>
+            </a>
+			</div>
+		</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,648 @@
+<html>
+<head>
+	<title>Our Kitchen</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/815d5311a8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="mycart.js"></script>
+  <script src="myscript.js"></script>
+
+  <script>
+	   function myFunction() {
+            var x = document.getElementById("mynavTop");
+            if (x.className === "navtop") {
+                x.className += " responsive";
+            } else {
+                x.className = "navtop";
+            }
+        }
+  </script>
+	<style>
+		body{
+            background-color: #74C69D;
+            font-family: "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+            margin: 0px;
+        }
+
+		 /* N A V I G A T I O N */
+
+		 .navtop {
+            overflow: hidden;
+            background-color: #40916C;
+        }
+
+        .navtop a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navtop .icon {
+            display: none;
+        }
+
+        .drop_down {
+            float: left;
+            overflow: hidden;
+        }
+
+        .drop_down .dropdown_btn {
+            font-size: 17px;    
+            border: none;
+            outline: none;
+            color: black;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .drop-content {
+            display: none;
+            position: absolute;
+            background-color: #409162;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .drop-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .navtop a:hover, .drop_down:hover .dropdown_btn, .search-container button:hover{
+            background-color: #74C69D;
+            color: white;
+        }
+
+        .drop-content a:hover {
+            background-color: #2D6A4F;
+            color: white;
+        }
+
+        .drop_down:hover .drop-content {
+            display: block;
+        }
+
+        @media screen and (max-width: 920px) {
+            .navtop input[type=text] {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 698px) {
+            .navtop a:not(:first-child), .dropdown .dropbtn {
+                display: none;
+            }
+
+            .navtop a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 698px) {
+            .navtop.responsive {position: relative;}
+            .navtop.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .navtop.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .navtop.responsive .drop_down {float: none;}
+            .navtop.responsive .drop-content {position: relative;}
+            .navtop.responsive .drop_down .dropdown_btn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+
+            .navtop input[type=text] {
+                display: inline;
+                padding: 6px;
+                margin-top: 8px;
+                font-size: 17px;
+                border: none;
+            }
+
+        }
+
+        @media screen and (max-width: 488px) {
+            .navtop input[type=text] {
+                display: none;
+            }
+        }
+
+        .search-container {
+            float: right;
+        }
+
+        .navtop input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .search-container button {
+            float: right;
+            padding: 10px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #74C69D;
+            font-size: 17px;
+            border: none;
+        }
+
+        .open-button {
+			background-color:#40916C;
+			border: none;
+			cursor: pointer;
+			position: fixed;
+			bottom: 5%;
+			left: 93%;
+			}
+
+			/* The popup chat - hidden by default */
+			.chat-popup {
+			display: none;
+			position: fixed;
+			bottom: 0;
+			right: 15px;
+			border: 3px solid #f1f1f1;
+			z-index: 9;
+			}
+
+		/* Add styles to the form container */
+		.form-container {
+		max-width: 300px;
+		padding: 10px;
+		background-color: white;
+		}
+
+		/* Full-width textarea */
+		.form-container textarea {
+		width: 100%;
+		padding: 15px;
+		margin: 5px 0 22px 0;
+		border: none;
+		background: #f1f1f1;
+		resize: none;
+		min-height: 200px;
+		}
+
+		/* When the textarea gets focus, do something */
+		.form-container textarea:focus {
+		background-color: #ddd;
+		outline: none;
+		}
+
+		/* Set a style for the submit/send button */
+		.form-container .btn {
+		background-color: #04AA6D;
+		color: white;
+		padding: 16px 20px;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		margin-bottom:10px;
+		opacity: 0.8;
+		}
+
+		/* Add a red background color to the cancel button */
+		.form-container .cancel {
+		background-color: red;
+		}
+
+		/* Add some hover effects to buttons */
+		.form-container .btn:hover, .open-button:hover {
+		opacity: 1;
+		}
+
+
+		#heading{
+        	background-color: rgba(255, 255, 255, 0.9);
+        	text-align: center;
+        	margin: 5% 5% 0% 5%;
+        	padding: 2%;
+            height: auto;
+            width: auto;
+            overflow: hidden;
+        }
+
+        #heading h1{
+            font-family: 'Parisienne', cursive;
+            font-size: 40px;
+            text-shadow: 2px 2px #40916C;
+        }
+
+        #heading h4{
+            font-style: italic;
+            font-weight: lighter;
+            color: grey;
+        }
+
+
+		#chefs{
+			display: flex;
+			flex-wrap:wrap;
+			justify-content: center;
+			align-items: center;
+			background-color: rgba(255, 255, 255, 0.5);
+			margin: 5% 5%;
+			padding: 2% 2%;
+		}
+
+		.blink{
+		animation:blink 1s infinite alternate ;}
+		
+		@keyframes blink{
+			0%{color:#b33380;}100%{color:white;};
+		}
+		.image{
+			position:relative;
+			width:400px;
+			margin: 0% 5% 2% 5%;
+		}
+		
+		.image-img{
+			display:block;
+			width:100%;
+		}
+		
+		.image-overlay{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.6);
+			color:#ffffff;
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			justify-content:center;
+			font-family:'Quicksand', sans-serif;
+			opacity:0;
+			transition:opacity 0.25s;
+			padding: 0% 2%; 
+		}
+		.image-overlay > *{
+			transform: translateY(20px);
+			transition:transform 0.25s;
+			}
+		.image-overlay:hover{
+			opacity:1;
+			}
+			
+		.image-overlay:hover > *{
+			transform: translateY(0);
+		}
+		.image-title{
+			font-size:2em;
+			font-weight:bold;
+		}
+		
+		.image-discription{
+			font-size:1.25em;
+			margin-top:0.25em;
+			}
+
+			/* F O O T E R   +   S O C I A L   I C O N S */
+
+        #footer{
+            background-image: linear-gradient(to right, #40916C, #74C69D);
+            padding: 5%;
+            margin: 4% 0% 0% 0%;
+        }
+
+        #social-container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .social-icons li a i {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 50%;
+            transition: 1.5s ease-in-out;
+            color: black;
+        }
+
+
+        .social-icons li a i:hover {
+            box-shadow: 0px 0px 6px 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer__contact{
+            font-size: 2rem;
+        }
+
+        .footer__mail{
+            font-size: 2rem;
+        }
+
+        .horizontal-list{
+              list-style: none;
+              padding-left: 0px;
+              margin: 0px;
+        }
+
+        .horizontal-list li{
+          display: inline-block;
+          margin: 0px 8px 8px 0px;
+          font-weight: 100;
+          font-size: 2.5rem;
+        }
+
+        .horizontal-list li a{
+            text-decoration: none;
+        }
+
+       
+        .social-icons li a i{
+            padding: 10px;
+            font-size: 2.5rem;
+            border-radius: 50%;
+        }
+
+		
+
+	</style>
+</head>
+<body>
+		
+	<!--  N A V I G A T I O N   B A R  -->
+
+<div class="topnav" id="myTopnav">
+
+    <div class="navtop" id="mynavTop">
+
+        <a href="Homepage.html">Home</a>
+        <div class="drop_down">
+            <button class="dropdown_btn">Items 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="drop-content">
+                <a href="Cakes.html">Cakes</a>
+                <a href="Pastries.html">Pastries</a>
+                <a href="Cupcakes.html">Cupcakes</a>
+                <a href="BiscuitsAndCookies.html">Cookies</a>
+                <a href="Donut.html">Donuts</a>
+                <a href="Waffles.html">Waffles</a>
+                <a href="Breads.html">Breads</a>
+                <a href="Others.html">Others</a>
+            </div>
+        </div>
+    <a href="KitchenPage.html">Our Kitchen</a>
+    <a href="PartyProps.html">Props</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="FAQ.html" target="_blank">FAQ</a>
+    <a href="" style="float: right;" data-toggle="modal" data-target="#cart"><i class="fas fa-shopping-cart"></i><span class="cart-items">( 0 )</span></a>
+    <a href="SignUp Page.html" target="_blank" style="float: right;"><i class="fas fa-user"></i></a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+
+        <div class="search-container">
+            <input type="text" placeholder="Search" name="search" pattern=[A-Za-z]>
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+
+    </div>
+
+    <!--chat box--->
+	<button class="open-button" onclick="openForm()"><i class="fas fa-envelope-open-text fa-4x"></i></button>
+	
+
+	<div class="chat-popup" id="myForm">
+	  <form action="#" class="form-container">
+		<h1>Chat</h1>
+
+		<label for="msg"><b>Message</b></label>
+		<textarea placeholder="Type message.." name="msg" required></textarea>
+
+		<button type="submit" class="btn">Send</button>
+		<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+	  </form>
+	</div>
+
+
+
+	<!--  C H E F ' S   P A R T  -->
+
+
+	<div id="heading">
+        <h1>Our Top Chefs</h1>
+        <h4>"A recipe has no soul. You, as the cook, must bring soul to the recipe."<br>- Thomas Keller</h4>
+    </div>
+
+	<div id="chefs">
+
+		<!-- all images from unsplash -->
+
+		<div class="image">
+			<a href="">
+				<img class="image-img" src="https://i.pinimg.com/originals/b2/f9/9c/b2f99cac5097a7e41023455c91cc9d00.jpg" class="chef-image">
+				<div class="image-overlay">
+					<div class="image-title" >Chef Rohan Khanna</div>
+					<p class="image-discription">Chef Rohan Khanna is the most famous and commended face as the chef.
+					He is a professional Chef, works for an effective TV Channel ‘FoodFood‘.He is the writer of top cookbooks, owner of famous restaurateur and have won many food competitions. His dream is to make Indian food the most obvious around the
+					world and engaging Indian’s through cooking to wind up independent life.Rohan Khanna is known as the ‘Best Chef of India’. This award is given him by the Government of India.</p>
+					</div>
+			</a>
+		</div>
+		<div class="image">
+			<a href="">
+				<img class="image-img" src="Sameer Brar.jpeg" class="chef-image">
+				<div class="image-overlay">
+					<div class="image-title" >Chef Sameer Brar</div>
+					<p class="image-discription">A renewed name as winning Michelin star culinary expert competition is Sameer Brar.
+					He is considered as the humble chef in the culinary field.Brar has worked with lot of best food experts around the globe, including Gordon Ramsey, and Bobby Flay. 
+					Moreover, in New York he runs his own restaurant named “Junoon”. Brar’s has additionally arranged a dinner for US President Barack Obama.</p>
+					</div>
+			</a>
+		</div>
+
+		<div  class="image">
+			<a href="">
+				<img class="image-img" src="Jay Mehra.jpeg" class="chef-image">
+				<!--<p class="chef-names">
+					Chef Jay Mehra
+				</p>-->
+				<div class="image-overlay">
+					<div class="image-title" >Chef Jay Mehra</div>
+					<p class="image-discription">Jay Mehra is an Indian cook, restaurateur, creator.He is the author of “Present day Indian Cooking”.
+					Cooking specialist Jay Mehra has led the coming era of Indian Cooking with his most recent cookbook with Chef Daniel Bolud.Jay’s most recent book is My Indian Kitchen 
+					which tells how to Prepare Delicious Indian Meals without Fear or Fuss by Tuttle Publishing. Hari additionally 
+					led America’s first frozen yogurt patisserie, Halo Fete situated in Princeton, New Jersey.</p>
+					</div>
+			</a>
+		</div>
+
+		<div  class="image">
+			<a href="">
+				<img class="image-img" src="Dhruv.jpeg" class="chef-image">
+				<div class="image-overlay">
+					<div class="image-title" >Chef Dhruv Rathore</div>
+					<p class="image-discription">Combination of Indian food with International Cuisine is the thing that 
+					made Chef Dhruv Rathore Sokhi famous among top best ten Indian chefs. He has a big name in Indian Food business. 
+					With a foundation of North India, Chef Dhruv is a music lover and is familiar with
+					English and five Indian regional languages – Hindi, Punjabi, Bengali, Oriya and Telugu.</p>
+					</div>
+			</a>
+		</div>
+		
+		<div  class="image">
+			<a href="">
+				<img class="image-img" src="Akhil.jpeg" class="chef-image">
+				<div class="image-overlay">
+					<div class="image-title" >Chef Akhil Sharma</div>
+					<p class="image-discription">Akhil is India’s most youthful VIP cooking expert.He is now working at Roti Rasta 
+					aur India which is among India’s huge appeared show. Additionally he has worked for “Moment Noodle Diaries” as a show 
+					on Channel News Asia, Singapore. He will be setting a record and getting a notice in – Limca Book of Records for being the main Indian culinary 
+					specialist to travel 20,000 kms of India by street in 100 days.</p>
+				</div>
+			</a>
+		</div>
+
+		<div  class="image">
+			<a href="">
+				<img class="image-img" src="https://i.pinimg.com/originals/ea/5d/8d/ea5d8dc00511c86697bf55b1734f4ba1.jpg" class="chef-image">
+				<div class="image-overlay">
+					<div class="image-title" >Chef Ankit Arora</div>
+					<p class="image-discription">Cooking specialist Ankit Arora is the youngest chef among top 10 chefs in India. He was an official culinary expert at 25 years old to have
+					ever worked with a five-star in India. At present, he is the senior official culinary expert at the Novotel Mumbai, Juhu Beach. He supervising the Dosa 
+					Factory and Shalimar in Cambridge in addition to Mantra in Boston.His famous show is ‘Health Bhi Taste Bhi’ on Zee Khana Khazana that presents unique and easy cooking.</p>
+					</div>
+			</a>
+		</div>
+
+		<div  class="image">
+			<a href="">
+				<img class="image-img" src="https://i.pinimg.com/originals/11/9f/d0/119fd027d0243b50684d84832f454104.jpg" class="chef-image">
+				<div class="image-overlay">
+					<div class="image-title" >Chef Ritika Sehgal</div>
+					<p class="image-discription">One of the youngest and the brightest chefs in our country who has cooked for many of the rich and the famous of our country.
+					She is known for creating magic with locally and organically produced foods rather than using canned goods
+					The journey to becoming one of the top Indian chefs was fruitful too for Ritika as she was selected as a winner for The Next Food Network Star.</p>
+					</div>
+			</a>
+		</div>
+
+		<div  class="image">
+			<a href="">
+				<img class="image-img" src="https://i.pinimg.com/originals/75/29/90/75299093a9892a90985df05a0471b11f.jpg" class="chef-image">
+				<div class="image-overlay">
+					<div class="image-title" >Chef Megha Khurana</div>
+					<p class="image-discription">Talking about Masterchef how can we forget it’s biggest find, Megha Khurana. Apart from
+					being a celebrity chef and TV Host, she also has her own youtube channel – “Megha’s Kitchen”.She was crowned the India’s Best Vegetarian cook in the 
+					reality show, Master Chef India, season 4 in 2015.Popularly known as the ‘Macaron Queen Of India’, she just published an all-eggless dessert book!</p>
+					</div>
+			</a>
+		</div>
+	</div>
+	
+	<p class="blink" style="font-family:serif;color:purple;font-size:3em;" align="center"><i><u>The Chief Ingredient in yummy food is always <b>LOVE</b></u></i></p>
+	
+	<img src=" https://i.makeagif.com/media/6-06-2017/JIImut.gif" height="50%" width="35%" style="margin:2% 0 0 10%; border:7px double black;"></img>
+	<img src="https://images.squarespace-cdn.com/content/v1/5e912b12627a6b1fe3ab95a3/1604344361863-2CF6BVE66L40E18QR2KU
+	/ke17ZwdGBToddI8pDm48kBth9zuhSwWlCZUhUfBNymJZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PIoZw5LoXx68rflr-jiwsSV7LNHNi4o8wMKa-hx9LOmTs/VideoToGif_GIF.GIF?format=2500w" height="50%" width="35%" style="margin:2% 0 0 6%;border:7px double black;"></img>
+	<img src="https://www.adagioblog.com/wp-content/uploads/2016/10/output_kSoZsD.gif" height="50%" width="35%" style="margin:2% 0 0 10%;border:7px double black;"></img>
+	<img src="https://i.pinimg.com/originals/2a/03/ce/2a03ce687e281f668b4ceb456c6b741a.gif" height="50%" width="35%" style="margin:2% 0 0 6%;border:7px double black;"></img>
+
+     <!-- Modal -->
+     <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">Your Cart</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+
+            <div class="cart-body">
+            </div>
+
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary checkout-btn" onclick="Checkout()">Checkout</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- F O O T E R   S O C I A L   I C O N S -->
+
+    <div id="footer">
+
+        <div id="social-container">
+
+            <div class="footer__contact">
+               <i> +91 99999 88888</i>
+            </div>
+
+            <div class="footer__social">
+                <ul class="horizontal-list text-center social-icons">
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-pinterest fa-4x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__mail">
+                <i>sweetretreat@gmail.com</i>
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+	</html>

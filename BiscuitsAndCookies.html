@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Biscuits and Cookies</title>
+
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "shortcut icon" href="favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/815d5311a8.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="mycart.js"></script>
+        <script src="myscript.js"></script>
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        /* S E L E C T I N G   I T E M S */
+
+        function change(){
+            document.getElementById('demo').innerHTML=(form.select[form.select.selectedIndex].text);
+        }
+
+        function change2(){
+            document.getElementById('demo2').innerHTML=(form2.select2[form2.select2.selectedIndex].text);
+        }
+
+        function change3(){
+            document.getElementById('demo3').innerHTML=(form3.select3[form3.select3.selectedIndex].text);
+        }
+
+        function change4(){
+            document.getElementById('demo4').innerHTML=(form4.select4[form4.select4.selectedIndex].text);
+        }
+
+        function change5(){
+            document.getElementById('demo5').innerHTML=(form5.select5[form5.select5.selectedIndex].text);
+        }
+
+        function change6(){
+            document.getElementById('demo6').innerHTML=(form6.select6[form6.select6.selectedIndex].text);
+        }
+
+        function change7(){
+            document.getElementById('demo7').innerHTML=(form7.select7[form7.select7.selectedIndex].text);
+        }
+
+        function change8(){
+            document.getElementById('demo8').innerHTML=(form8.select8[form8.select8.selectedIndex].text);
+        }
+
+        function change9(){
+            document.getElementById('demo9').innerHTML=(form9.select9[form9.select9.selectedIndex].text);
+        }
+
+        function change10(){
+            document.getElementById('demo10').innerHTML=(form10.select10[form10.select10.selectedIndex].text);
+        }
+
+        function change11(){
+            document.getElementById('demo11').innerHTML=(form11.select11[form11.select11.selectedIndex].text);
+        }
+
+        function change12(){
+            document.getElementById('demo12').innerHTML=(form12.select12[form12.select12.selectedIndex].text);
+        }
+
+        function change13(){
+            document.getElementById('demo13').innerHTML=(form13.select13[form13.select13.selectedIndex].text);
+        }
+
+        function change14(){
+            document.getElementById('demo14').innerHTML=(form14.select14[form14.select14.selectedIndex].text);
+        }
+
+        function change15(){
+            document.getElementById('demo15').innerHTML=(form15.select15[form15.select15.selectedIndex].text);
+        }
+
+        function change16(){
+            document.getElementById('demo16').innerHTML=(form16.select16[form16.select16.selectedIndex].text);
+        }
+
+        function change17(){
+            document.getElementById('demo17').innerHTML=(form17.select17[form17.select17.selectedIndex].text);
+        }
+
+        function change18(){
+            document.getElementById('demo18').innerHTML=(form18.select18[form18.select18.selectedIndex].text);
+        }
+
+        function change19(){
+            document.getElementById('demo19').innerHTML=(form19.select19[form19.select19.selectedIndex].text);
+        }
+
+        function change20(){
+            document.getElementById('demo20').innerHTML=(form20.select20[form20.select20.selectedIndex].text);
+        }
+
+        function change21(){
+            document.getElementById('demo21').innerHTML=(form21.select21[form21.select21.selectedIndex].text);
+        }
+
+        function change22(){
+            document.getElementById('demo22').innerHTML=(form22.select22[form22.select22.selectedIndex].text);
+        }
+
+        function change23(){
+            document.getElementById('demo23').innerHTML=(form23.select23[form23.select23.selectedIndex].text);
+        }
+
+        function change24(){
+            document.getElementById('demo24').innerHTML=(form24.select24[form24.select24.selectedIndex].text);
+        }
+
+    </script>
+
+    <style>
+
+        body{
+            background-color: #EEBCBE;
+            font-family: "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+            margin: 0px;
+        }
+
+        /* N A V I G A T I O N */
+
+        .navtop {
+            overflow: hidden;
+            background-color: #e5989b;
+        }
+
+        .navtop a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navtop .icon {
+            display: none;
+        }
+
+        .drop_down {
+            float: left;
+            overflow: hidden;
+        }
+
+        .drop_down .dropdown_btn {
+            font-size: 17px;    
+            border: none;
+            outline: none;
+            color: black;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .drop-content {
+            display: none;
+            position: absolute;
+            background-color: #f4acb7;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .drop-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .navtop a:hover, .drop_down:hover .dropdown_btn, .search-container button:hover{
+            background-color: #f4acb7;
+            color: white;
+        }
+
+        .drop-content a:hover {
+            background-color: #e5989b;
+            color: white;
+        }
+
+        .drop_down:hover .drop-content {
+            display: block;
+        }
+
+        @media screen and (max-width: 920px) {
+            .navtop input[type=text] {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 698px) {
+            .navtop a:not(:first-child), .dropdown .dropbtn {
+                display: none;
+            }
+
+            .navtop a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 698px) {
+            .navtop.responsive {position: relative;}
+            .navtop.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .navtop.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .navtop.responsive .drop_down {float: none;}
+            .navtop.responsive .drop-content {position: relative;}
+            .navtop.responsive .drop_down .dropdown_btn {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+
+            .navtop input[type=text] {
+                display: inline;
+                padding: 6px;
+                margin-top: 8px;
+                font-size: 17px;
+                border: none;
+            }
+
+        }
+
+        @media screen and (max-width: 488px) {
+            .navtop input[type=text] {
+                display: none;
+            }
+        }
+
+        .search-container {
+            float: right;
+        }
+
+        .navtop input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #EEBCBE;
+            font-size: 17px;
+            border: none;
+        }
+
+
+
+        /* M A I N - C O N T E N T */
+
+       #main{
+            display: flex;
+			flex-wrap:wrap;
+			justify-content: center;
+			align-items: center;
+			margin: 5%;
+			background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        #heading{
+        	background-color: rgba(255, 255, 255, 0.9);
+        	text-align: center;
+        	margin: 5% 5% 0% 5%;
+        	padding: 2%;
+            height: auto;
+            width: auto;
+            overflow: hidden;
+        }
+
+        #heading h1{
+            font-family: 'Parisienne', cursive;
+            font-size: 40px;
+            text-shadow: 2px 2px #EEBCBE;
+        }
+
+        #heading h4{
+            font-style: italic;
+            font-weight: lighter;
+            color: grey;
+        }
+
+        .open-button {
+			background-color:rgba(248, 248, 248, 0.6);
+			border: none;
+			cursor: pointer;
+			position: fixed;
+			bottom: 5%;
+			left: 93%;
+			}
+
+			/* The popup chat - hidden by default */
+			.chat-popup {
+			display: none;
+			position: fixed;
+			bottom: 0;
+			right: 15px;
+			border: 3px solid #f1f1f1;
+			z-index: 9;
+			}
+
+		/* Add styles to the form container */
+		.form-container {
+		max-width: 300px;
+		padding: 10px;
+		background-color: white;
+		}
+
+		/* Full-width textarea */
+		.form-container textarea {
+		width: 100%;
+		padding: 15px;
+		margin: 5px 0 22px 0;
+		border: none;
+		background: #f1f1f1;
+		resize: none;
+		min-height: 200px;
+		}
+
+		/* When the textarea gets focus, do something */
+		.form-container textarea:focus {
+		background-color: #ddd;
+		outline: none;
+		}
+
+		/* Set a style for the submit/send button */
+		.form-container .btn {
+		background-color: #04AA6D;
+		color: white;
+		padding: 16px 20px;
+		border: none;
+		cursor: pointer;
+		width: 100%;
+		margin-bottom:10px;
+		opacity: 0.8;
+		}
+
+		/* Add a red background color to the cancel button */
+		.form-container .cancel {
+		background-color: red;
+		}
+
+		/* Add some hover effects to buttons */
+		.form-container .btn:hover, .open-button:hover {
+		opacity: 1;
+		}
+
+
+        /* I T E M   D E T A I L S */
+
+        .card {
+        	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        	max-width: 300px;
+        	margin: 3%; 
+        	text-align: center;
+        	background-color: white;
+        	border: 1.5px solid black;
+        	transition: 1s ease-in-out;
+        }
+
+        .card button {
+        	border: none;
+        	outline: 0;
+        	padding: 12px;
+        	color: white;
+        	background-color: #000;
+        	text-align: center;
+        	width: 100%;
+        	font-size: 18px;
+        	transition: 1s ease-in-out;
+        }
+
+        .card:hover{
+			box-shadow: 10px 10px 25px white;
+		}
+
+        .card button:hover {
+        	opacity: 0.9;
+        	background-color: #370617;
+        }
+
+        .description{
+        	padding: 3%;
+        }
+
+        .item-img{
+        	height: 250px;
+        	width: 100%;
+        }
+
+        .item-price{
+            text-decoration:none; 
+            color:brown; 
+            position:relative; 
+            top:-2%; 
+            margin:0 0 0 2%; 
+            font-style: italic; 
+            font-weight: bold; 
+            font-size: 22px;
+
+        }
+
+        .price-dropdown{
+            text-decoration:none; 
+            color:grey;
+            position:relative;
+            top:-5%;
+            margin:0 0 0 2%;
+        }
+
+        /* F O O T E R   +   S O C I A L   I C O N S */
+
+        #footer{
+            background-image: linear-gradient(to right, #e5989b , #f9d2d7);
+            padding: 5%;
+        }
+
+        #social-container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .social-icons li a i {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 50%;
+            transition: 1.5s ease-in-out;
+            color:  black;
+        }
+
+
+        .social-icons li a i:hover {
+            box-shadow: 0px 0px 6px 4px rgba(255, 255, 255, 0.3);
+        }
+
+        .footer__contact{
+            font-size: 2rem;
+        }
+
+        .footer__mail{
+            font-size: 2rem;
+        }
+
+        .horizontal-list{
+              list-style: none;
+              padding-left: 0px;
+              margin: 0px;
+        }
+
+        .horizontal-list li{
+          display: inline-block;
+          margin: 0px 8px 8px 0px;
+          font-weight: 100;
+          font-size: 2.5rem;
+        }
+
+        .horizontal-list li a{
+            text-decoration: none;
+        }
+
+       
+        .social-icons li a i{
+            padding: 10px;
+            font-size: 2.5rem;
+            border-radius: 50%;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+	<!--  N A V I G A T I O N   B A R  -->
+
+    <div class="navtop" id="mynavTop">
+
+        <a href="Homepage.html">Home</a>
+        <div class="drop_down">
+            <button class="dropdown_btn">Items 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="drop-content">
+                <a href="Cakes.html">Cakes</a>
+                <a href="Pastries.html">Pastries</a>
+                <a href="Cupcakes.html">Cupcakes</a>
+                <a href="BiscuitsAndCookies.html">Cookies</a>
+                <a href="Donut.html">Donuts</a>
+                <a href="Waffles.html">Waffles</a>
+                <a href="Breads.html">Breads</a>
+                <a href="Others.html">Others</a>
+            </div>
+        </div> 
+        <a href="KitchenPage.html">Our Kitchen</a>
+        <a href="PartyProps.html">Props</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="FAQ.html" target="_blank">FAQ</a>
+        <a href="" style="float: right;" data-toggle="modal" data-target="#cart"><i class="fas fa-shopping-cart"></i><span class="cart-items">( 0 )</span></a>
+        <a href="SignUp Page.html" target="_blank" style="float: right;"><i class="fas fa-user"></i></a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+
+
+        <div class="search-container">
+            <input type="text" placeholder="Search" name="search" pattern=[A-Za-z]>
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+
+    </div>
+
+
+    <!--  M A I N   C O N T E N T  -->
+
+    <div id="heading">
+    	<h1>Biscuits & Cookies</h1>
+        <h4>"A balanced diet is a cookie in each hand."<br>-Barbara Johnson</h4>
+    </div>
+
+    <!--chat box--->
+	<button class="open-button" onclick="openForm()"><i class="fas fa-envelope-open-text fa-4x"></i></button>
+	
+
+	<div class="chat-popup" id="myForm">
+	  <form action="#" class="form-container">
+		<h1>Chat</h1>
+
+		<label for="msg"><b>Message</b></label>
+		<textarea placeholder="Type message.." name="msg" required></textarea>
+
+		<button type="submit" class="btn">Send</button>
+		<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+	  </form>
+	</div>
+
+    <!--  I T E M   C A R D S  -->
+
+    <div id="main">
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/81/09/9e/81099e0eb6ed3c567742c565e4753617.jpg" class="item-img">
+            <h1>Ghibli Cookies</h1>
+            <form name="form22">
+                <select id="a22" class="price-dropdown" name="select22" Onchange="change22()" value="Quanity and Price-22">
+                    <option value="250g ~ ₹35">250g ~ ₹35</option>
+                    <option value="500g ~ ₹65">500g ~ ₹65</option>
+                    <option value="1kg ~ ₹129">1kg ~ ₹129</option>
+                    <option value="2kg ~ ₹249">2kg ~ ₹249</option>
+                </select>
+            </form>
+            <p id="demo22" class="item-price"></p>
+            <p class="description">A special baked treat for all studio ghibli fans!</p>
+            <p><button onclick="add_to_cart('1','Ghibli Cookies','35')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/1d/2e/d7/1d2ed760f59827084e0d88d4cad23528.jpg" class="item-img">
+            <h1>Winter Cookies</h1>
+            <form name="form23">
+                <select id="a23" class="price-dropdown" name="select23" Onchange="change23()" value="Quanity and Price-23">
+                    <option value="250g ~ ₹35">250g ~ ₹35</option>
+                    <option value="500g ~ ₹65">500g ~ ₹65</option>
+                    <option value="1kg ~ ₹129">1kg ~ ₹129</option>
+                    <option value="2kg ~ ₹249">2kg ~ ₹249</option>
+                </select>
+            </form>
+            <p id="demo23" class="item-price"></p>
+            <p class="description">Special christmas/winter themed cookies!</p>
+            <p><button onclick="add_to_cart('2','Winter Cookies','35')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/2b/a5/d9/2ba5d914358fef69eb738d495a5cd7cf.jpg" class="item-img">
+            <h1>Blue Lake</h1>
+            <form name="form24">
+                <select id="a24" class="price-dropdown" name="select24" Onchange="change24()" value="Quanity and Price-24">
+                    <option value="250g ~ ₹35">250g ~ ₹35</option>
+                    <option value="500g ~ ₹65">500g ~ ₹65</option>
+                    <option value="1kg ~ ₹129">1kg ~ ₹129</option>
+                    <option value="2kg ~ ₹249">2kg ~ ₹249</option>
+                </select>
+            </form>
+            <p id="demo24" class="item-price"></p>
+            <p class="description">Cookies with the goodness of blueberries!</p>
+            <p><button onclick="add_to_cart('3','Blue Lake','35')">Add to Cart</button></p>
+        </div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/474x/67/b6/c1/67b6c1cc46f05db912824c7eee9e6d7c.jpg" class="item-img">
+    		<h1>Classic Choco</h1>
+            <form name="form">
+                <select id="a1" class="price-dropdown" name="select" Onchange="change()" value="Quanity and Price">
+                    <option value="250g ~ ₹39">250g ~ ₹39</option>
+                    <option value="500g ~ ₹75">500g ~ ₹75</option>
+                    <option value="1kg ~ ₹149">1kg ~ ₹149</option>
+                    <option value="2kg ~ ₹299">2kg ~ ₹299</option>
+                </select>
+            </form>
+            <p id="demo" class="item-price"></p>    
+    		<p class="description">The all time favorite choco chip cookies!</p>
+    		<p><button onclick="add_to_cart('4','Classic Choco','39')">Add to Cart</button></p>
+    	</div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/19/21/6f/19216ff374e38289a6baf88d08937490.jpg" class="item-img">
+    		<h1>Rainbow Rain</h1>
+    		<form name="form2">
+                <select id="a2" class="price-dropdown" name="select2" Onchange="change2()" value="Quanity and Price-2">
+                    <option value="250g ~ ₹39">250g ~ ₹39</option>
+                    <option value="500g ~ ₹75">500g ~ ₹75</option>
+                    <option value="1kg ~ ₹149">1kg ~ ₹149</option>
+                    <option value="2kg ~ ₹299">2kg ~ ₹299</option>
+                </select>
+            </form>
+            <p id="demo2" class="item-price"></p>
+    		<p class="description">Soft sugar cookies with buttercream frosting!</p>
+    		<p><button onclick="add_to_cart('5','Rainbow Rain','39')">Add to Cart</button></p>
+    	</div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/93/ff/70/93ff70f51ad243f745fdbcc108613cd0.jpg" class="item-img">
+    		<h1>Swirling Colours</h1>
+    		<form name="form3">
+                <select id="a3" class="price-dropdown" name="select3" Onchange="change3()" value="Quanity and Price-3">
+                    <option value="250g ~ ₹39">250g ~ ₹39</option>
+                    <option value="500g ~ ₹75">500g ~ ₹75</option>
+                    <option value="1kg ~ ₹149">1kg ~ ₹149</option>
+                    <option value="2kg ~ ₹299">2kg ~ ₹299</option>
+                </select>
+            </form>
+            <p id="demo3" class="item-price"></p>
+    		<p class="description">Soft sprinkle pudding cookies loaded with vanilla flavour!</p>
+    		<p><button onclick="add_to_cart('6','Swirling Colours','39')">Add to Cart</button></p>
+    	</div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/4c/f3/aa/4cf3aa2ad98b7d83061f993d4d83d67e.jpg" class="item-img">
+            <h1>Cream Cookies</h1>
+            <form name="form8">
+                <select id="a8" class="price-dropdown" name="select8" Onchange="change8()" value="Quanity and Price-8">
+                    <option value="250g ~ ₹39">250g ~ ₹39</option>
+                    <option value="500g ~ ₹75">500g ~ ₹75</option>
+                    <option value="1kg ~ ₹149">1kg ~ ₹149</option>
+                    <option value="2kg ~ ₹299">2kg ~ ₹299</option>
+                </select>
+            </form>
+            <p id="demo8" class="item-price"></p>
+            <p class="description">Plain biscuits topped with sweet vanilla cream!</p>
+            <<p><button onclick="add_to_cart('7','Cream Cookies','39')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/474x/2e/72/6f/2e726f8608779a7c67d467932dcad178.jpg" class="item-img">
+            <h1>Cookie-pop</h1>
+            <form name="form9">
+                <select id="a9" class="price-dropdown" name="select9" Onchange="change9()" value="Quanity and Price-9">
+                    <option value="250g ~ ₹39">250g ~ ₹39</option>
+                    <option value="500g ~ ₹75">500g ~ ₹75</option>
+                    <option value="1kg ~ ₹149">1kg ~ ₹149</option>
+                    <option value="2kg ~ ₹299">2kg ~ ₹299</option>
+                </select>
+            </form>
+            <p id="demo9" class="item-price"></p>
+            <p class="description">Heart shaped lollipops with the goodness of cookies!</p>
+            <p><button onclick="add_to_cart('8','Cookie-pop','39')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/6c/cf/ba/6ccfbaa2598fd126ac178b3eba5ce916.jpg" class="item-img">
+            <h1>Peach Ribbon</h1>
+            <form name="form11">
+                <select id="a11" class="price-dropdown" name="select11" Onchange="change11()" value="Quanity and Price-11">
+                    <option value="250g ~ ₹39">250g ~ ₹39</option>
+                    <option value="500g ~ ₹75">500g ~ ₹75</option>
+                    <option value="1kg ~ ₹149">1kg ~ ₹149</option>
+                    <option value="2kg ~ ₹299">2kg ~ ₹299</option>
+                </select>
+            </form>
+            <p id="demo11" class="item-price"></p>
+            <p class="description">Lace sugar cookies to satisfy your hunger!</p>
+            <p><button onclick="add_to_cart('9','Peach Ribbon','39')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/40/6e/98/406e985b4b356119def7552c1b0f12db.jpg" class="item-img">
+            <h1>Kiddie Delight</h1>
+            <form name="form14">
+                <select id="a14" class="price-dropdown" name="select14" Onchange="change14()" value="Quanity and Price-14">
+                    <option value="250g ~ ₹39">250g ~ ₹39</option>
+                    <option value="500g ~ ₹75">500g ~ ₹75</option>
+                    <option value="1kg ~ ₹149">1kg ~ ₹149</option>
+                    <option value="2kg ~ ₹299">2kg ~ ₹299</option>
+                </select>
+            </form>
+            <p id="demo14" class="item-price"></p>
+            <p class="description">Treat your kids with these wonderful colourful cookies!</p>
+            <p><button onclick="add_to_cart('10','Kiddie Delight','39')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/4c/bf/ee/4cbfee2c6da4a1bd04a1dcac8383ca73.jpg" class="item-img">
+            <h1>Pretty Butterflies</h1>
+            <form name="form15">
+                <select id="a15" class="price-dropdown" name="select15" Onchange="change15()" value="Quanity and Price-15">
+                    <option value="250g ~ ₹39">250g ~ ₹39</option>
+                    <option value="500g ~ ₹75">500g ~ ₹75</option>
+                    <option value="1kg ~ ₹149">1kg ~ ₹149</option>
+                    <option value="2kg ~ ₹299">2kg ~ ₹299</option>
+                </select>
+            </form>
+            <p id="demo15" class="item-price"></p>
+            <p class="description">Let your worries fly away with these fruity biscuits!</p>
+            <p><button onclick="add_to_cart('11','Pretty Butterflies','39')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/474x/31/b0/3f/31b03f4e9bc8106356115209dc3d27e0.jpg" class="item-img">
+            <h1>Ring It Up</h1>
+            <form name="form18">
+                <select id="a18" class="price-dropdown" name="select18" Onchange="change18()" value="Quanity and Price-18">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo18" class="item-price"></p>
+            <p class="description">Donut shaped bright cookies with sprinkles!</p>
+            <p><button onclick="add_to_cart('12','Ring It Up','45')">Add to Cart</button></p>
+        </div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/e7/f4/37/e7f4376f64ce45004c6f1e56fb549a60.jpg" class="item-img">
+    		<h1>Sweet Pink</h1>
+    		<form name="form4">
+                <select id="a4" class="price-dropdown" name="select4" Onchange="change4()" value="Quanity and Price-4">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo4" class="item-price"></p>
+    		<p class="description">Strawberry and cake mic crincle cookies!</p>
+    		<p><button onclick="add_to_cart('13','Sweet Pink','45')">Add to Cart</button></p>
+    	</div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/10/a2/22/10a222511d4ff9bdff1d82c7d6b68179.jpg" class="item-img">
+    		<h1>Orange Burst</h1>
+    		<form name="form5">
+                <select id="a5" class="price-dropdown" name="select5" Onchange="change5()" value="Quanity and Price-5">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo5" class="item-price"></p>
+    		<p class="description">A citrus infused crinkle cookie amde with cake mix!</p>
+    		<p><button onclick="add_to_cart('14','Orange Burst','45')">Add to Cart</button></p>
+    	</div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/04/f5/3b/04f53b1b69ebf90ce144215bada27af3.jpg" class="item-img">
+    		<h1>Minty Delight</h1>
+    		<form name="form6">
+                <select id="a6" class="price-dropdown" name="select6" Onchange="change6()" value="Quanity and Price-6">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo6" class="item-price"></p>
+    		<p class="description">Crispy, soft and chewy, minty goodness, covered in powdered sugar!</p>
+    		<p><button onclick="add_to_cart('15','Minty Delight','45')">Add to Cart</button></p>
+    	</div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/7d/54/98/7d54985160c98ac292610ea083410b07.jpg" class="item-img">
+    		<h1>Lime Ice</h1>
+    		<form name="form7">
+                <select id="a7" class="price-dropdown" name="select7" Onchange="change7()" value="Quanity and Price-7">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo7" class="item-price"></p>
+    		<p class="description">Key lime adds a sweet, tart flavor to these crincle cookies!</p>
+    		<p><button onclick="add_to_cart('16','Lime Ice','45')">Add to Cart</button></p>
+    	</div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/22/a8/f6/22a8f67f38d2125c36edeee7f9868c1f.jpg" class="item-img">
+            <h1>Galaxy Flash</h1>
+            <form name="form12">
+                <select id="a12" class="price-dropdown" name="select12" Onchange="change12()" value="Quanity and Price-12">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo12" class="item-price"></p>
+            <p class="description">Embark on an intergalactic travel with this creamy delight!</p>
+            <p><button onclick="add_to_cart('17','Galaxy Flash','45')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/89/b0/1f/89b01fabbe928cd57712872d1d28d769.jpg" class="item-img">
+            <h1>Sea Foam</h1>
+            <form name="form13">
+                <select id="a13" class="price-dropdown" name="select13" Onchange="change13()" value="Quanity and Price-13">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo13" class="item-price"></p>
+            <p class="description">Fresh sea green biscuits bringing waves of euphoria!</p>
+            <p><button onclick="add_to_cart('18','Sea Foam','45')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/4b/6a/b8/4b6ab8e67bf75eb87ab3e1188a27228b.jpg" class="item-img">
+            <h1>Mint Lace</h1>
+            <form name="form10">
+                <select id="a10" class="price-dropdown" name="select10" Onchange="change10()" value="Quanity and Price-10">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo10" class="item-price"></p>
+            <p class="description">Mint cookies with a lace and rose pattern!</p>
+            <p><button onclick="add_to_cart('19','Mint Lace','45')">Add to Cart</button></p>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/564x/af/26/dd/af26dda9dcf57b3826b23c82b4691ba7.jpg" class="item-img">
+            <h1>Bis-sicle</h1>
+            <form name="form19">
+                <select id="a19" class="price-dropdown" name="select19" Onchange="change19()" value="Quanity and Price-19">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo19" class="item-price"></p>
+            <p class="description">Popsical themed biscuits to remind you of summer!</p>
+            <p><button onclick="add_to_cart('20','Bis-sicle','45')">Add to Cart</button></p>
+        </div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/fc/e3/11/fce311cfd5ee7157b0421d15d5c98a33.jpg" class="item-img">
+    		<h1>Jam Fun!</h1>
+    		<form name="form16">
+                <select id="a16" class="price-dropdown" name="select16" Onchange="change16()" value="Quanity and Price-16">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo16" class="item-price"></p>
+    		<p class="description">Regular cookies with a punch of tasty fruit jam!</p>
+    		<p><button onclick="add_to_cart('21','Jam Fun!','45')">Add to Cart</button></p>
+    	</div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/1f/2d/e5/1f2de5beb386cb95edabb12786ca2be4.jpg" class="item-img">
+    		<h1>Half and Half</h1>
+    		<form name="form17">
+                <select id="a17" class="price-dropdown" name="select17" Onchange="change17()" value="Quanity and Price-17">
+                    <option value="250g ~ ₹45">250g ~ ₹45</option>
+                    <option value="500g ~ ₹85">500g ~ ₹85</option>
+                    <option value="1kg ~ ₹159">1kg ~ ₹159</option>
+                    <option value="2kg ~ ₹329">2kg ~ ₹329</option>
+                </select>
+            </form>
+            <p id="demo17" class="item-price"></p>
+    		<p class="description">A crunchy mixture of cream and crispy treats!</p>
+    		<p><button onclick="add_to_cart('22','Half and Half','45')">Add to Cart</button></p>
+    	</div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/f0/98/da/f098da5f80104503bb033cdf8a310504.jpg" class="item-img">
+    		<h1>Rasp Biscuits</h1>
+    		<form name="form20">
+                <select id="a20" class="price-dropdown" name="select20" Onchange="change20()" value="Quanity and Price-20">
+                    <option value="250g ~ ₹69">250g ~ ₹69</option>
+                    <option value="500g ~ ₹129">500g ~ ₹129</option>
+                    <option value="1kg ~ ₹245">1kg ~ ₹245</option>
+                    <option value="2kg ~ ₹469">2kg ~ ₹469</option>
+                </select>
+            </form>
+            <p id="demo20" class="item-price"></p>
+    		<p class="description">Biscuits topped with cream and raspberry!</p>
+    		<p><button onclick="add_to_cart('23','Rasp Biscuit','69')">Add to Cart</button></p>
+    	</div>
+
+    	<div class="card">
+    		<img src="https://i.pinimg.com/564x/a5/3b/00/a53b00eee994913bad48f3db3f903e7f.jpg" class="item-img">
+    		<h1>Berry-Jelly Cookie</h1>
+    		<form name="form21">
+                <select id="a21" class="price-dropdown" name="select21" Onchange="change21()" value="Quanity and Price-21">
+                    <option value="250g ~ ₹69">250g ~ ₹69</option>
+                    <option value="500g ~ ₹129">500g ~ ₹129</option>
+                    <option value="1kg ~ ₹245">1kg ~ ₹245</option>
+                    <option value="2kg ~ ₹469">2kg ~ ₹469</option>
+                </select>
+            </form>
+            <p id="demo21" class="item-price"></p>
+    		<p class="description">Jelly-like biscuits topped with strawberries!</p>
+    		<p><button onclick="add_to_cart('24','Berry-Jelly Cookie','69')">Add to Cart</button></p>
+    	</div>
+
+    </div>
+
+    <!-- Modal -->
+        <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel" style="font-weight:bold;">Your Cart</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+
+                <div class="cart-body">
+                </div>
+
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary checkout-btn" onclick="Checkout()">Checkout</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- F O O T E R   S O C I A L   I C O N S -->
+
+    <div id="footer">
+
+        <div id="social-container">
+
+            <div class="footer__contact">
+               <i> +91 99999 88888</i>
+            </div>
+
+            <div class="footer__social">
+                <ul class="horizontal-list text-center social-icons">
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-pinterest fa-4x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer__mail">
+                <i>sweetretreat@gmail.com</i>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
