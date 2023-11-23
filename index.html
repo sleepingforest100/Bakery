@@ -1308,7 +1308,21 @@
             width: 100% !important;
             height: 100% !important;
         }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
 
+        #changeColorBtn {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
 
     </style>
 
@@ -1428,7 +1442,7 @@
         </div>
     </div>
     </div>
-
+    <button id="changeColorBtn">Change Background Color</button>
 	<!--chat box--->
 	<button class="open-button" onclick="openForm()"><i class="fas fa-envelope-open-text fa-4x"></i></button>
 
@@ -1762,6 +1776,25 @@
 		</div>
 		</div>
 	</div>
+    <script>
+    // Get the button element
+    const changeColorBtn = document.getElementById('changeColorBtn');
 
+    // Function to generate a random hex color
+    function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+    }
+
+    // Event listener for the button click
+    changeColorBtn.addEventListener('click', function () {
+    // Change the background color of the body
+    document.body.style.backgroundColor = getRandomColor();
+    });
+    </script>
 </body>
 </html>
