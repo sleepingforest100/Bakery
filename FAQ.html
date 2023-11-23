@@ -528,6 +528,25 @@
                 }
             }
 
+            .result {
+                font-weight: bold;
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            button {
+                background-color: #e74c3c;
+                color: #ffffff;
+                border: none;
+                padding: 10px 0; /* Fixed height, adjust as needed */
+                width: 100%; /* Full width */
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #c23616; /* Darker red on hover */
+            }
         </style>
     </head>
     <body>
@@ -564,7 +583,116 @@
                 <div class="child"><b>Do you take care of the hygiene while preparing the items?</b><i class="fas fa-chevron-down"></i></div>
                 <div class="ans hide">Yes! Hygiene is our first priority. We take great care of it while preparing the items.</div>
             </div>
+
+            <h1>Cooking and Bakery Quiz</h1>
+
+            <!-- Question 1: Cooking -->
+            <div class="mb-4">
+                <h2>Question 1</h2>
+                <p>What is the main ingredient in the Italian dish risotto?</p>
+                <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">A) Rice</label><br>
+                <input type="radio" name="q1" value="b" id="q1b"><label for="q1b">B) Pasta</label><br>
+                <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">C) Potatoes</label><br>
+                <input type="radio" name="q1" value="d" id="q1d"><label for="q1d">D) Quinoa</label><br>
+            </div>
+
+            <!-- Question 2: Bakery -->
+            <div class="mb-4">
+                <h2>Question 2</h2>
+                <p>Which of the following is a leavening agent commonly used in baking?</p>
+                <input type="radio" name="q2" value="a" id="q2a"><label for="q2a">A) Baking Soda</label><br>
+                <input type="radio" name="q2" value="b" id="q2b"><label for="q2b">B) Salt</label><br>
+                <input type="radio" name="q2" value="c" id="q2c"><label for="q2c">C) Vinegar</label><br>
+                <input type="radio" name="q2" value="d" id="q2d"><label for="q2d">D) Olive Oil</label><br>
+            </div>
+
+            <!-- Question 3: Cooking -->
+            <div class="mb-4">
+                <h2>Question 3</h2>
+                <p>What is the key ingredient in the Japanese dish sushi?</p>
+                <input type="radio" name="q3" value="a" id="q3a"><label for="q3a">A) Tofu</label><br>
+                <input type="radio" name="q3" value="b" id="q3b"><label for="q3b">B) Seaweed</label><br>
+                <input type="radio" name="q3" value="c" id="q3c"><label for="q3c">C) Rice</label><br>
+                <input type="radio" name="q3" value="d" id="q3d"><label for="q3d">D) Noodles</label><br>
+            </div>
+
+            <!-- Question 4: Bakery -->
+            <div class="mb-4">
+                <h2>Question 4</h2>
+                <p>What type of pastry is used to make a croissant?</p>
+                <input type="radio" name="q4" value="a" id="q4a"><label for="q4a">A) Puff Pastry</label><br>
+                <input type="radio" name="q4" value="b" id="q4b"><label for="q4b">B) Shortcrust Pastry</label><br>
+                <input type="radio" name="q4" value="c" id="q4c"><label for="q4c">C) Filo Pastry</label><br>
+                <input type="radio" name="q4" value="d" id="q4d"><label for="q4d">D) Choux Pastry</label><br>
+            </div>
+
+            <!-- Question 5: Cooking -->
+            <div class="mb-4">
+                <h2>Question 5</h2>
+                <p>What is the primary ingredient in the Indian dish dal?</p>
+                <input type="radio" name="q5" value="a" id="q5a"><label for="q5a">A) Lentils</label><br>
+                <input type="radio" name="q5" value="b" id="q5b"><label for="q5b">B) Chickpeas</label><br>
+                <input type="radio" name="q5" value="c" id="q5c"><label for="q5c">C) Rice</label><br>
+                <input type="radio" name="q5" value="d" id="q5d"><label for="q5d">D) Potatoes</label><br>
+            </div>
+
+            <!-- Question 6: Bakery -->
+            <div class="mb-4">
+                <h2>Question 6</h2>
+                <p>Which of the following is a traditional French bread?</p>
+                <input type="radio" name="q6" value="a" id="q6a"><label for="q6a">A) Sourdough</label><br>
+                <input type="radio" name="q6" value="b" id="q6b"><label for="q6b">B) Focaccia</label><br>
+                <input type="radio" name="q6" value="c" id="q6c"><label for="q6c">C) Baguette</label><br>
+                <input type="radio" name="q6" value="d" id="q6d"><label for="q6d">D) Ciabatta</label><br>
+            </div>
+
+            <!-- Question 7: Cooking -->
+            <div class="mb-4">
+                <h2>Question 7</h2>
+                <p>What is the main protein source in the traditional dish paella?</p>
+                <input type="radio" name="q7" value="a" id="q7a"><label for="q7a">A) Chicken</label><br>
+                <input type="radio" name="q7" value="b" id="q7b"><label for="q7b">B) Beef</label><br>
+                <input type="radio" name="q7" value="c" id="q7c"><label for="q7c">C) Shrimp</label><br>
+                <input type="radio" name="q7" value="d" id="q7d"><label for="q7d">D) Fish</label><br>
+            </div>
+            <!-- Question 8: Bakery -->
+            <div class="mb-4">
+                <h2>Question 8</h2>
+                <p>What is the main ingredient in the classic French pastry éclair?</p>
+                <input type="radio" name="q8" value="a" id="q8a"><label for="q8a">A) Puff Pastry</label><br>
+                <input type="radio" name="q8" value="b" id="q8b"><label for="q8b">B) Choux Pastry</label><br>
+                <input type="radio" name="q8" value="c" id="q8c"><label for="q8c">C) Shortcrust Pastry</label><br>
+                <input type="radio" name="q8" value="d" id="q8d"><label for="q8d">D) Filo Pastry</label><br>
+            </div>
+
+            <!-- Question 9: Cooking -->
+            <div class="mb-4">
+                <h2>Question 9</h2>
+                <p>Which cuisine is known for its use of spices such as cumin, coriander, and turmeric?</p>
+                <input type="radio" name="q9" value="a" id="q9a"><label for="q9a">A) Italian</label><br>
+                <input type="radio" name="q9" value="b" id="q9b"><label for="q9b">B) Mexican</label><br>
+                <input type="radio" name="q9" value="c" id="q9c"><label for="q9c">C) Indian</label><br>
+                <input type="radio" name="q9" value="d" id="q9d"><label for="q9d">D) Japanese</label><br>
+            </div>
+
+            <!-- Question 10: Bakery -->
+            <div class="mb-4">
+                <h2>Question 10</h2>
+                <p>What is the primary sweetener used in traditional baklava?</p>
+                <input type="radio" name="q10" value="a" id="q10a"><label for="q10a">A) Honey</label><br>
+                <input type="radio" name="q10" value="b" id="q10b"><label for="q10b">B) Maple Syrup</label><br>
+                <input type="radio" name="q10" value="c" id="q10c"><label for="q10c">C) Agave Nectar</label><br>
+                <input type="radio" name="q10" value="d" id="q10d"><label for="q10d">D) Molasses</label><br>
+            </div>
+
+            <!-- Submit Button -->
+            <button class="btn btn-primary" onclick="submitQuiz()">Submit</button>
+
+            <!-- Result Section -->
+            <div class="result mt-3" id="quizResult"></div>
         </div>
+        </div>
+
         <script>
             // ROTATING ARROWS AND SHOW AND HIDE DIV'S
 
@@ -575,6 +703,41 @@
                 cur.classList.toggle("rot");
                 answer[i].classList.toggle("hide");
             })});
+
+            function submitQuiz() {
+                // Quiz Questions and Correct Answers
+                const correctAnswers = {
+                    q1: 'a',
+                    q2: 'a',
+                    q3: 'c',
+                    q4: 'a',
+                    q5: 'a',
+                    q6: 'c',
+                    q7: 'c',
+                    q8: 'b',
+                    q9: 'c',
+                    q10: 'a'
+                };
+
+                // Calculate Score
+                let score = 0;
+                for (let i = 1; i <= 10; i++) {
+                    const answer = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (answer && answer.value === correctAnswers[`q${i}`]) {
+                        score++;
+                    }
+                }
+
+                // Display Result
+                const resultDiv = document.getElementById('quizResult');
+                resultDiv.innerHTML = `Your score is ${score}/10. ${
+                    score >= 7 ? 'Great job!' : 'Keep practicing!'
+                }`;
+            }
         </script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>
