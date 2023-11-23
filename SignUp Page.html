@@ -23,7 +23,7 @@
 			}
 			
 			#signUp{
-				height : 92vh;
+				height : 50vh;
 				width: 40vw;
 				background: #ffece6;
 				margin-left : 56vw;
@@ -229,34 +229,114 @@
 					width : 93.6vw;
 				}
 			}
+			.step-container {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 20px;
+			}
+
+			.step {
+				flex: 1;
+				text-align: center;
+				font-size: 18px;
+				color: #3498db;
+				border-bottom: 2px solid #3498db;
+				padding: 10px 0;
+			}
+
+			.form-step {
+				display: none;
+			}
+
+			.form-step.active {
+				display: block;
+			}
+
 		</style>
 	</head>
 	<body>
-	
+
+
 	<div id="signUp">
-	<div id="letsGo" style="font-size:10vh;font-family: 'Great Vibes', cursive;">Let's Go!!</div>
-	
-	<form>
-	
-		<label for="fname" class="field"><b>Name</b><span style="color:red;"><b>*</b></span></b></label>
-		<input class="inp" type="text" name="name" id="fname" pattern=[A-Za-z] title="Can only contain alphabets." placeholder="Enter your Name" size="35" required/>
-		
-		<label for="mail" class="field"><b>Email</b></label>
-		<input class="inp" type="email" name="email" id="mail" placeholder="Enter your Email id" size="35"/>
-		
-		<label for="num" class="field"><b>Mobile No.</b><span style="color:red;"><b>*</b></span></label>
-		<input class="inp" type="tel" name="mobile" id="num" placeholder="Enter your Mobile number" size="35" required/>
-		
-		<label for="userN" class="field"><b>Username</b><span style="color:red;"><b>*</b></span></label>
-		<input class="inp" type="text" name="username" id="userN" pattern="[a-z0-9_]" title="Can only contain lowercase letters, numbers and underscore." placeholder="Enter your Username" size="35" required/>
-		
-		<label for="pass" class="field"><b>Password</b><span style="color:red;"><b>*</b></span></label>
-		<input class="inp" type="password" name="password" id="pass" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z).{8,}" title="Enter atleast 8 or more characters with atleast one uppercase letter, one lowercase letter and one number." placeholder="Enter your Password" size="35" required/>
-		
-		<button type="submit" value="Submit" class="btn" name="submit" style="font-size:2.7vh; align-self: stretch; margin-bottom: 0.6rem; ">Sign Up</button>
-		
+		<div id="letsGo" style="font-size:10vh;font-family: 'Great Vibes', cursive;">Let's Go!!</div>
+
+		<div class="step-container">
+			<div class="step active" id="step1">Step 1</div>
+			<div class="step" id="step2">Step 2</div>
+			<div class="step" id="step3">Step 3</div>
+		</div>
+
+		<form id="signupForm">
+			<!-- Step 1 -->
+			<div class="form-step active" id="formStep1">
+				<h2>Step 1: Personal Information</h2>
+				<label for="fname" class="field"><b>Name</b><span style="color:red;"><b>*</b></span></label>
+				<input class="inp" type="text" name="name" id="fname" pattern="[A-Za-z]+" title="Can only contain alphabets." placeholder="Enter your Name" size="35" required/>
+				<button type="button" onclick="nextStep()">Next</button>
+			</div>
+
+			<!-- Step 2 -->
+			<div class="form-step" id="formStep2">
+				<h2>Step 2: Contact Information</h2>
+				<label for="mail" class="field"><b>Email</b></label>
+				<input class="inp" type="email" name="email" id="mail" placeholder="Enter your Email id" size="35"/>
+				<label for="num" class="field"><b>Mobile No.</b><span style="color:red;"><b>*</b></span></label>
+				<input class="inp" type="tel" name="mobile" id="num" placeholder="Enter your Mobile number" size="35" required/>
+				<button type="button" onclick="prevStep()">Previous</button>
+				<button type="button" onclick="nextStep()">Next</button>
+			</div>
+
+			<!-- Step 3 -->
+			<div class="form-step" id="formStep3">
+				<h2>Step 3: Account Information</h2>
+				<label for="userN" class="field"><b>Username</b><span style="color:red;"><b>*</b></span></label>
+				<input class="inp" type="text" name="username" id="userN" pattern="[a-z0-9_]+" title="Can only contain lowercase letters, numbers, and underscore." placeholder="Enter your Username" size="35" required/>
+				<label for="pass" class="field"><b>Password</b><span style="color:red;"><b>*</b></span></label>
+				<input class="inp" type="password" name="password" id="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Enter at least 8 characters with at least one uppercase letter, one lowercase letter, and one number." placeholder="Enter your Password" size="35" required/>
+				<button type="button" onclick="prevStep()">Previous</button>
+				<button type="submit" class="btn">Sign Up</button>
+			</div>
+		</form>
+
 		Already have an account? <a href="" class="login"><u>Click here to login!</u></a>
-	</form>
 	</div>
+	<script>
+		let currentStep = 1;
+
+		function nextStep() {
+			if (currentStep < 3) {
+				currentStep++;
+				updateSteps();
+			}
+		}
+
+		function prevStep() {
+			if (currentStep > 1) {
+				currentStep--;
+				updateSteps();
+			}
+		}
+
+		function updateSteps() {
+			document.querySelectorAll('.step').forEach(step => {
+				step.classList.remove('active');
+			});
+
+			document.getElementById(`step${currentStep}`).classList.add('active');
+
+			document.querySelectorAll('.form-step').forEach(step => {
+				step.classList.remove('active');
+			});
+
+			document.getElementById(`formStep${currentStep}`).classList.add('active');
+		}
+
+		// Form submission logic
+		document.getElementById('signupForm').addEventListener('submit', function (event) {
+			event.preventDefault();
+			// You can perform further validation or submit the form data here
+			alert('Form submitted successfully!');
+		});
+	</script>
 	</body>
 </html>
