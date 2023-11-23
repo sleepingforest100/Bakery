@@ -271,6 +271,7 @@
         .subheader{
           margin: 5% 5%;
           font-style: italic;
+            color: white;
         }
 
         .subheader h2{
@@ -371,6 +372,65 @@
             border-radius: 50%;
         }
 
+
+      #fullscreenVideo {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: -1;
+      }
+
+      .content {
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #fff;
+          z-index: 1;
+      }
+
+
+      #fullscreenBtn {
+          background-color: #e74c3c;
+          color: #fff;
+          padding: 15px 30px;
+          font-size: 1.2em;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+      }
+      /* Modal Styles */
+      .modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: #fff;
+          padding: 20px;
+          border-radius: 5px;
+      }
+
+      .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          font-size: 20px;
+      }
       </style>
 
 </head>
@@ -414,6 +474,27 @@
         </div>
 
     </div>
+
+
+      <video id="fullscreenVideo" autoplay muted loop>
+          <!-- Add your video source here -->
+          <source src="bg_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+
+      <div class="content">
+          <button id="fullscreenBtn" onclick="openModal()">Explore Now</button>
+      </div>
+
+
+      <!-- Modal -->
+      <div id="myModal" class="modal">
+          <div class="modal-content">
+              <span class="close-btn" onclick="closeModal()">&times;</span>
+              <h2>Special Offer!</h2>
+              <p>Get 10% off on your first order. Use code: BAKERY10</p>
+          </div>
+      </div>
 
     <!--chat box--->
 	<button class="open-button" onclick="openForm()"><i class="fas fa-envelope-open-text fa-4x"></i></button>
@@ -599,6 +680,69 @@
         </div>
 
     </div>
+
+      <script>
+          // Get the video element and button element
+          const video = document.getElementById('fullscreenVideo');
+          const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+          // Event listener for the button click
+          fullscreenBtn.addEventListener('click', function () {
+              toggleFullScreen();
+          });
+
+          // // Function to toggle full screen
+          // function toggleFullScreen() {
+          //     if (!document.fullscreenElement && !document.mozFullScreenElement &&
+          //         !document.webkitFullscreenElement && !document.msFullscreenElement) {
+          //         // Enter full screen
+          //         if (video.requestFullscreen) {
+          //             video.requestFullscreen();
+          //         } else if (video.mozRequestFullScreen) {
+          //             video.mozRequestFullScreen();
+          //         } else if (video.webkitRequestFullscreen) {
+          //             video.webkitRequestFullscreen();
+          //         } else if (video.msRequestFullscreen) {
+          //             video.msRequestFullscreen();
+          //         }
+          //     } else {
+          //         // Exit full screen
+          //         if (document.exitFullscreen) {
+          //             document.exitFullscreen();
+          //         } else if (document.mozCancelFullScreen) {
+          //             document.mozCancelFullScreen();
+          //         } else if (document.webkitExitFullscreen) {
+          //             document.webkitExitFullscreen();
+          //         } else if (document.msExitFullscreen) {
+          //             document.msExitFullscreen();
+          //         }
+          //     }
+          // }
+          // // Get the video element and button element
+
+
+          function openModal() {
+              // Display the modal
+              document.getElementById('myModal').style.display = 'block';
+              // Pause the video when the modal is open
+              video.pause();
+          }
+
+          function closeModal() {
+              // Hide the modal
+              document.getElementById('myModal').style.display = 'none';
+              // Resume the video when the modal is closed
+              video.play();
+          }
+
+          // Close the modal if the user clicks outside the modal
+          window.onclick = function (event) {
+              const modal = document.getElementById('myModal');
+              if (event.target === modal) {
+                  closeModal();
+              }
+          };
+      </script>
 
 </body>
 </html>
